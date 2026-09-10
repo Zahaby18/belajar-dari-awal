@@ -15,12 +15,16 @@ function hitungTotal(array $harga, float $pajakPersen): float
     return 0.0;
 }
 
+echo array_sum(hitungTotal[1000,2000],10);
+
 // 2. 1500000 -> "Rp1.500.000,-"
 function formatRupiah(float $angka): string
 {
     // TODO 2: number_format($angka, 0, ",", ".") lalu tempel "Rp" dan ",-"
     return "";
 }
+
+echo number_format(formatRupiah(1000000))
 
 // 3. Balikin produk yang stoknya DI BAWAH batas. Pakai foreach, bukan array_filter.
 function stokRendah(array $produk, int $batas): array
@@ -29,12 +33,29 @@ function stokRendah(array $produk, int $batas): array
     return [];
 }
 
+$produk = [
+    ["nama" => "Kopi Arabica",  "harga" => 85000, "stok" => 12],
+    ["nama" => "Teh Hijau",     "harga" => 35000, "stok" => 3],
+    ["nama" => "Cokelat Bubuk", "harga" => 62000, "stok" => 0],
+    ["nama" => "Gula Aren",     "harga" => 25000, "stok" => 20],
+];
+
+var_dump(stokRendah($produk, 10));
+
 // 4. Balikin produk yang namanya cocok, atau null kalau nggak ada.
 function cariProduk(array $produk, string $nama): ?array
 {
     // TODO 4: loop, bandingkan nama pakai === , langsung return produknya kalau ketemu
     return null;
 }
+$produk = [
+    ["nama" => "Kopi Arabica",  "harga" => 85000, "stok" => 12],
+    ["nama" => "Teh Hijau",     "harga" => 35000, "stok" => 3],
+    ["nama" => "Cokelat Bubuk", "harga" => 62000, "stok" => 0],
+    ["nama" => "Gula Aren",     "harga" => 25000, "stok" => 20],
+];
+
+var_dump(cariProduk($produk, "Teh Hijau")); 
 
 // 5. Cetak tabel rapi ke terminal: Nama | Harga | Stok
 function tampilkanTabel(array $produk): void
@@ -42,6 +63,15 @@ function tampilkanTabel(array $produk): void
     // TODO 5: pakai str_pad($teks, 20) biar kolomnya lurus
     // Petunjuk: cetak header dulu, lalu loop
 }
+
+$produk = [
+    ["nama" => "Kopi Arabica",  "harga" => 85000, "stok" => 12],
+    ["nama" => "Teh Hijau",     "harga" => 35000, "stok" => 3],
+    ["nama" => "Cokelat Bubuk", "harga" => 62000, "stok" => 0],
+    ["nama" => "Gula Aren",     "harga" => 25000, "stok" => 20],
+];
+
+var_dump(cariProduk($produk, "Kopi Luwak"));
 
 // ============================================================
 // BAGIAN INI JANGAN DIUBAH - jadi tolok ukur kamu benar
