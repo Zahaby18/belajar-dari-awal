@@ -37,7 +37,10 @@ echo "\n\n=== TUGAS 5: array + foreach ===\n";
 // TUGAS 5: bikin $buah = ["apel", "jeruk", "mangga"] lalu cetak satu per baris
 // tulis di bawah sini
 $buah = ["apel", "jeruk", "mangga"];
-echo $buah[0];
+
+foreach($buah as $i){
+    echo $i;
+}
 
 
 echo "\n\n=== TUGAS 6: function pertama ===\n";
@@ -49,7 +52,7 @@ function tambah($a,$b){
     return $a + $b;
 }
 
-echo tambah(5,7)
+echo tambah(5,7);
 
 
 echo "\n";
