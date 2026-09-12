@@ -187,3 +187,54 @@ kamu   : R p . 8 . 0 0 0
 3. Test: `echo formatRupiah(1500000) . "\n";` -> harus `Rp1.500.000,-`
 4. Test kedua: `echo formatRupiah(85000) . "\n";` -> harus `Rp85.000,-`
 5. Bandingkan karakter per karakter dengan target, baru commit + push
+
+---
+
+## Iterasi 6 - commit `074b094` -> TUGAS 2 HAMPIR LULUS (95%)
+**Hasil run:**
+```
+60000
+33000
+1.500.000
+Rp.15.000,-Rp.85.000,-
+```
+
+### Yang BENAR (ini poin penting)
+1. Function sudah jadi `formatRupiah(float $angka): string` -> parameter tunggal, tanpa loop, tanpa penjumlahan. Spesifikasi dipenuhi. **Konsep "satu function satu tugas" sudah kamu terapkan**
+2. `number_format($angka, 0, ",", ".")` -> 3 argumennya tepat semua
+3. Output sudah punya `,-` di belakang (kemarin nggak ada)
+
+### TINGGAL 1 KARAKTER: titik setelah Rp
+```php
+return "Rp." . number_format($angka, 0, ",", ".") . ",-";
+//         ^ titik ini harus dihapus
+```
+Perbandingan karakter per karakter:
+```
+target : R p 1 . 5 0 0 . 0 0 0 , -
+kamu   : R p . 1 5 . 0 0 0 , -
+```
+Jawaban: hapus titik di `"Rp."` menjadi `"Rp"`.
+
+### Dua hal lain
+1. Tes pakai `15000`, target di materi `1500000`. Tidak masalah besar (logika sama), tapi pakai angka target biar bisa dibandingkan langsung
+2. Dua `echo` nggak ada `"\n"`, jadi outputnya nempel jadi satu baris. Tambah `"\n"` di akhir tiap echo
+
+### ALAT BARU: file target output
+Dibuat `latihan/expected/02-functions.txt` yang isinya output yang seharusnya keluar, dan cara bandinginnya didokumentasikan di `PANDUAN-RUN-PHP.md`.
+
+Ini menjawab masalah yang muncul 3 kali berturut-turut: kamu run, tapi nggak membandingkan hasil dengan target. Jadi sekarang perbandingannya mekanis:
+```
+php latihan/02-functions.php > hasil.txt
+fc hasil.txt latihan\expected\02-functions.txt
+```
+`fc` bilang "no differences" = lulus. Beda 1 spasi pun kelihatan.
+
+### Temuan mentor: pola yang harus diubah
+3 iterasi terakhir menunjukkan pola sama: syntax kamu makin cepat benar, tapi kamu berhenti setelah "tidak ada error". Standar yang gue mau kamu pegang: **selesai itu ketika output sama persis dengan target**, bukan ketika programnya jalan.
+
+### Yang harus dikerjakan
+1. Hapus titik di `"Rp."`
+2. Ganti tes jadi `formatRupiah(1500000)` dan `formatRupiah(85000)`, kasih `"\n"`
+3. Jalankan `fc`/`diff` vs `latihan/expected/02-functions.txt` sampai "no differences"
+4. Baru commit + push

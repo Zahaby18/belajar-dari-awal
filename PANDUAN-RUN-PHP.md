@@ -66,3 +66,35 @@ Kode selesai bukan kalau udah ditulis. Kode selesai kalau:
 1. Udah di-run
 2. Output-nya dibaca dan sesuai harapan
 3. Baru di-commit
+
+---
+
+## CARA BANDINGIN OUTPUT DENGAN TARGET (wajib, biar nggak "kira-kira benar")
+Setiap latihan punya file target output di folder `latihan/expected/`. Contoh: `latihan/expected/02-functions.txt`.
+Isinya output yang SEHARUSNYA keluar, baris per baris.
+
+**Langkahnya (Windows):**
+```
+php latihan/02-functions.php > hasil.txt
+fc hasil.txt latihan\expected\02-functions.txt
+```
+- `> hasil.txt` = simpan output ke file, bukan cuma tampil di layar
+- `fc` = bandingkan 2 file. Kalau cocok, dia bilang "FC: no differences encountered"
+
+**Kalau pakai Git Bash / Mac / Linux:**
+```
+php latihan/02-functions.php > hasil.txt
+diff hasil.txt latihan/expected/02-functions.txt
+```
+Kalau `diff` nggak ngeluarin apa-apa, artinya COCOK SEMPURNA.
+
+**Kalau beda, `diff` akan nunjukin baris mana yang beda:**
+```
+< Rp.15.000,-          <- tanda < artinya isi file KAMU
+> Rp1.500.000,-        <- tanda > artinya isi file TARGET
+```
+Tanda `<` = punyamu, `>` = target. Baca per karakter. Contoh di atas: ada titik setelah `Rp` yang seharusnya nggak ada.
+
+`hasil.txt` udah masuk `.gitignore`, jadi nggak akan ke-commit.
+
+**Kenapa ini penting:** mata manusia itu payah membandingkan teks panjang. `fc`/`diff` nggak pernah salah dan nggak pernah lupa. Programmer profesional pakai alat ini setiap hari, bukan ngandelin feeling.
