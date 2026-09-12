@@ -172,9 +172,73 @@ Kesimpulan file ini: **belum waktunya.** Bukan karena kamu bodoh, tapi karena is
 
 ---
 
-# RINGKASAN: 4 hal yang harus kamu ingat dari sesi ini
+# POLA AKUMULATOR: arti tiap baris
+Pola ini muncul di semua function yang "mengumpulkan data". Di TUGAS 3 (`stokRendah`) bentuknya begini:
+```php
+$hasil = [];
+foreach ($produk as $p) {
+    if (...) {
+        $hasil[] = $p;
+    }
+}
+return $hasil;
+```
+
+## Baris per baris
+**`$hasil = [];`**
+Siapkan RAK KOSONG buat wadah hasil akhir. Kenapa harus disiapkan di depan? Karena nanti di dalam loop kita mau menaruh barang ke situ. Kalau nggak disiapkan, nggak ada tempat naruhnya.
+Isi awalnya kosong `[]`, dan nanti isinya nambah satu-satu.
+
+**`foreach ($produk as $p) { }`**
+Ambil isi `$produk` SATU PER SATU, dari depan ke belakang. Item yang lagi dipegang sementara diberi nama `$p`.
+Tiap putaran, `$p` isinya beda: putaran 1 = produk pertama, putaran 2 = produk kedua, dst.
+Blok di dalam `{ }` dijalankan sekali untuk setiap item.
+
+**`if ( ... ) { }`**
+Pertanyaannya: "produk yang lagi gue pegang ini, masuk kriteria atau nggak?"
+Tanda `...` di contoh itu **PLACEHOLDER, bukan syntax PHP**. Itu gue tulis biar kamu yang ngisi. Kamu harus ganti jadi pertanyaan nyata, misal: stok produk ini kurang dari batas?
+Karena `$p` itu rak berlabel, cara ambil stoknya: `$p["stok"]`. Dan batasnya ada di parameter `$batas`.
+
+**`$hasil[] = $p;`**
+Kalau pertanyaannya benar, MASUKKAN produk itu ke rak hasil.
+- `$hasil[]` artinya "slot baru paling belakang". Jadi tiap kali, produk baru ditambahkan ke ujung rak, nggak menimpa yang sudah ada
+- Bandingkan: `$hasil[0] = $p;` artinya "letakkan di slot 0", dan itu akan MENIMPA isi slot 0 tiap kali. Ini kesalahan umum, dan hasilnya cuma 1 item walau syaratnya lolos berkali-kali
+- Cara lain yang sama artinya: `array_push($hasil, $p);` (yang `[]` lebih sering dipakai)
+
+**`return $hasil;`**
+Setelah rak `$produk` habis diperiksa, serahkan rak hasilnya ke yang memanggil function.
+
+## Telusuri dengan data nyata (ini cara mikir yang bener)
+Data: Kopi (stok 12), Teh (stok 3), Cokelat (stok 0), Gula (stok 20). Batas = 10.
+
+| Putaran | `$p` yang dipegang | Pertanyaan: stok < 10? | Aksi | Isi `$hasil` sekarang |
+|---|---|---|---|---|
+| 1 | Kopi (12) | TIDAK | tidak masuk | `[]` |
+| 2 | Teh (3) | IYA | masuk | `[Teh]` |
+| 3 | Cokelat (0) | IYA | masuk | `[Teh, Cokelat]` |
+| 4 | Gula (20) | TIDAK | tidak masuk | `[Teh, Cokelat]` |
+
+Setelah loop habis, `return $hasil` -> `[Teh, Cokelat]`. Jumlahnya 2. Itu sebabnya target output `2` lalu nama dua produk itu.
+
+## Pola ini namanya apa dan di mana dipakai
+Namanya **filter** (menyaring) dengan pola **akumulator** (mengumpulkan hasil di wadah).
+Dipakai di mana-mana, seumur karier:
+- Tampilkan produk yang stoknya habis
+- Ambil transaksi bulan ini saja
+- Cari user yang belum verifikasi email
+- Hitung total belanja
+Bentuknya selalu sama: siapkan wadah, periksa satu-satu, kumpulkan yang lolos, serahkan hasilnya.
+
+## Bedanya sama `hitungTotal`
+- `hitungTotal` wadahnya ANGKA, ditambah pakai `$total = $total + $x;`
+- `stokRendah` wadahnya RAK, ditambah pakai `$hasil[] = $x;`
+Wadahnya beda, polanya persis sama.
+
+---
+
+# RINGKASAN: 5 hal yang harus kamu ingat
 1. `;` di akhir tiap perintah. Ini penyebab 90% parse error
 2. Variable = kotak berlabel, selalu mulai `$`
 3. `foreach` untuk nyebut semua isi rak, satu per satu
-4. Setiap function pakai `return`, bukan `echo`
-5. Run dulu sebelum commit: `php latihan/00-mulai.php`
+4. Di dalam function pakai `return`, bukan `echo`
+5. Run dulu, bandingkan dengan target, baru commit
