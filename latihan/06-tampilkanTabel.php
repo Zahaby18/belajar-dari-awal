@@ -12,10 +12,11 @@
 // baris 3+: satu baris per produk
 function tampilkanTabel(array $produk): void
 {
-    echo str_pad("Nama", 15). "|" . str_pad("Harga", 10) . "|". "Stok" . "\n";
+    echo str_pad("Nama", 15). "| " . str_pad("Harga", 10) . "| ". "Stok" . "\n";
+    echo "----------------------------------". "\n";
 
     foreach($produk as $p){
-        echo str_pad($p["nama"], 15) . "|" . str_pad((string)$p["harga"], 10) . "|" . $p["stok"] . "\n" ;
+        echo str_pad($p["nama"], 15) . "| " . str_pad((string)$p["harga"], 10) . "| " . $p["stok"] . "\n" ;
     }
 }
 
