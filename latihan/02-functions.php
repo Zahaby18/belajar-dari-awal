@@ -19,9 +19,7 @@ function hitungTotal(array $harga, float $pajak) : float{
         $hasil = $hasil + $a;
     }
 
-    $hasil + ($hasil * $pajak / 100);
-
-    return $hasil;
+    return $hasil + ($hasil * $pajak / 100) ;
 }
 
-echo hitungTotal([10000,20000],100);
+echo hitungTotal([10000,20000],10);
