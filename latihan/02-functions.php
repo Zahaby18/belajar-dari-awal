@@ -30,8 +30,8 @@ echo "\n";
 echo number_format(1500000, 0, ",", ".") . "\n";
 
 function formatRupiah(float $angka): string{
-    return "Rp." . number_format($angka, 0, ",", "."). ",-";
+    return "Rp " . number_format($angka, 0, ",", "."). ",-";
 }
 
-echo formatRupiah(15000);
+echo formatRupiah(15000000). "\n";
 echo formatRupiah(85000);
