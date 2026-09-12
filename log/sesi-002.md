@@ -107,3 +107,24 @@ Kalau pakai 100% dan kodenya benar, hasilnya jadi 60000. Pas tes, pakai angka ya
 2. Ganti tes jadi `hitungTotal([10000, 20000], 10)`
 3. Run, pastikan keluar `33000`
 4. Commit + push
+
+---
+
+## Iterasi 4 - commit `3203aef` / `f7b71b7` -> TUGAS 1 LULUS
+**Hasil run:** `60000` lalu `33000` -> BENAR, target tercapai.
+
+```php
+return $hasil + ($hasil * $pajak / 100);
+```
+Pilihan yang bagus: langsung dihitung saat diserahkan, jadi nggak butuh baris assign terpisah. Dua-duanya sah, kamu pilih versi yang lebih ringkas.
+
+### Catatan gaya (bukan error, biar jadi kebiasaan)
+1. Format PSR-12: `function hitungTotal(array $harga, float $pajak) : float{` -> seharusnya `float $pajak): float {`
+2. Nama `$pajak` masih ambigu: itu nominal rupiah atau persen? Di materi ditulis `$pajakPersen`. Nama yang ambigu adalah sumber bug di tim, jadi biasakan yang spesifik
+3. `$hasil = $hasil + $a;` bisa disingkat `$hasil += $a;` (shortcut ini dipakai di hampir semua kode PHP profesional). Fungsinya identik
+4. `echo hitungTotal(...)` tambahkan `"\n"` di akhir biar output nggak nempel dengan baris terminal
+5. Komentar `// Tugas 1` sebaiknya diganti penjelasan nyata, misal `// jumlahkan harga, lalu tambah pajak persen`. Komentar menjelaskan KENAPA/Apa, bukan nomor tugas
+
+### Progres
+- TUGAS 1 `hitungTotal`: LULUS
+- Berikutnya: TUGAS 2 `formatRupiah`
