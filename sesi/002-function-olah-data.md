@@ -85,6 +85,39 @@ Fungsi `$hasil[] = $p;` itu cara menambah item baru ke rak dari belakang.
 
 Run: `var_dump(stokRendah($produk, 10));` harus keluar 2 produk (Teh dan satu lagi).
 
+### VERSI RESMI TUGAS 3 (pakai file dan target baru)
+Bikin file baru: `latihan/03-stokRendah.php`. Jangan ditumpuk di `02-functions.php`, biar outputnya bisa dibandingkan dengan target sendiri.
+
+Isi file itu:
+```php
+<?php
+
+$produk = [
+    ["nama" => "Kopi Arabica",  "harga" => 85000, "stok" => 12],
+    ["nama" => "Teh Hijau",     "harga" => 35000, "stok" => 3],
+    ["nama" => "Cokelat Bubuk", "harga" => 62000, "stok" => 0],
+    ["nama" => "Gula Aren",     "harga" => 25000, "stok" => 20],
+];
+
+function stokRendah(array $produk, int $batas): array
+{
+    // TODO: isi di sini. Pakai pola akumulator dengan wadah berupa rak
+}
+
+$hasil = stokRendah($produk, 10);
+echo count($hasil) . "\n";
+foreach ($hasil as $p) {
+    echo $p["nama"] . " - " . $p["stok"] . "\n";
+}
+```
+
+Target output ada di `latihan/expected/03-stokRendah.txt`. Cara cek:
+```
+php latihan/03-stokRendah.php > hasil3.txt
+fc hasil3.txt latihan\expected\03-stokRendah.txt
+```
+
+
 ---
 
 ## ATURAN SESI INI
