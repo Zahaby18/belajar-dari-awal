@@ -59,3 +59,51 @@ Ini kejadian normal dalam kerja tim, bukan error. Di kantor, ini terjadi puluhan
 - TUGAS 5: LULUS
 - Sesi 001: LULUS semua
 - Berikutnya: Sesi 002 TUGAS 1 (`hitungTotal`)
+
+---
+
+## Iterasi 3 - commit `875f006`, file baru `latihan/02-functions.php`
+**Yang dikerjakan:** TUGAS 1 `hitungTotal`
+**Hasil run:** `30000` -> BELUM sesuai target (harusnya `33000`)
+
+### Yang BENAR
+- Pola akumulator (`$hasil = 0;` lalu `foreach` lalu `$hasil = $hasil + $a;`) -> PERSIS BENAR. Ini pola inti yang gue mau kamu kuasai, dan kamu langsung kena di percobaan pertama
+- File baru, nama function, parameter `array $harga` dan `: float` -> semua benar
+- Sudah RUN sendiri sebelum push -> kebiasaan mulai terbentuk
+
+### BUG 1: hasil hitungan dibuang (baris 22)
+```php
+$hasil + ($hasil * $pajak / 100);   // <- hasilnya dihitung, lalu DIBUANG
+```
+Baris ini PHP hitung, terus dilempar ke tempat sampah. Nggak ada yang menyimpan.
+Analogi: kamu masak, masakannya matang, lalu kamu buang ke tempat sampah dan cuma ngeliatin pancinya.
+Yang bener: simpan ke wadah, atau langsung diserahkan:
+```php
+$hasil = $hasil + ($hasil * $pajak / 100);   // cara 1: simpan
+
+return $hasil + ($hasil * $pajak / 100);      // cara 2: langsung serahkan
+```
+Ini bug yang tidak munculin error sama sekali. PHP nggak ngeluh, program tetap jalan, hasilnya cuma salah. Termasuk kategori paling berbahaya: **silent bug**.
+
+### BUG 2: yang di-return masih nilai sebelum pajak
+```php
+return $hasil;    // <- ini nilai hasil penjumlahan saja, belum kena pajak
+```
+Itulah kenapa outputnya `30000`, bukan `33000`.
+
+### CATATAN 3: tes pakai angka yang salah
+```php
+echo hitungTotal([10000,20000],100);   // 100 itu 100%, bukan 10%
+```
+Target di materi: `hitungTotal([10000, 20000], 10)` = `33000`.
+Kalau pakai 100% dan kodenya benar, hasilnya jadi 60000. Pas tes, pakai angka yang ada targetnya di materi, biar kamu bisa bandingin hasil vs harapan.
+
+### PELAJARAN INTI ITERASI INI
+"Ada output" bukan berarti "output sudah benar". Setelah run, WAJIB bandingkan angkanya dengan target di materi:
+- target `33000`, hasil `30000` -> berarti ada yang kurang, dan itu jawabannya ada di kode sendiri
+
+### Yang harus dikerjakan
+1. Baris 22: simpan hasilnya (`$hasil = ...`) ATAU gabung langsung ke `return`
+2. Ganti tes jadi `hitungTotal([10000, 20000], 10)`
+3. Run, pastikan keluar `33000`
+4. Commit + push
