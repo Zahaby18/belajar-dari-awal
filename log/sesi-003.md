@@ -70,3 +70,29 @@ Brokoli|75    |25000
 2. Tambah baris pemisah `str_repeat("-", 34)`
 3. Baris data pakai lebar yang sama: nama 15, harga 10 (harga dikonversi `(string)` dulu)
 4. Verifikasi dengan `fc`/`diff` dan paste hasilnya
+
+---
+
+## Iterasi 2 - commit `975d5d6` -> HAMPIR LULUS (90%)
+Kemajuan besar: `str_pad` sudah dipakai dengan benar, dan LEBAR header sudah sama dengan lebar baris data (15 dan 10). Kolomnya sudah lurus.
+
+Sisa 2 hal:
+1. **Kurang spasi setelah tanda `|`.** Dia tulis `"|"`, targetnya `"| "`. Semua baris perlu spasi setelah pipa
+2. **Baris pemisah masih belum ada** (`str_repeat("-", 34)`)
+
+Output dia:
+```
+Nama           |Harga     |Stok
+Kopi Arabica   |85000     |12
+```
+Target:
+```
+Nama           | Harga     | Stok
+----------------------------------
+Kopi Arabica   | 85000     | 12
+```
+
+Catatan mentor: 2 hal ini bisa ketemu sendiri dalam 5 detik dengan membaca output `diff` (tanda `<` = punyamu, `>` = target). Sudah dijadikan PR pertama untuk sesi berikutnya.
+
+### Status akhir hari ini
+Dua-duanya ditutup untuk hari ini (keputusan Zahab). 06 diselesaikan di awal sesi berikutnya, lalu langsung masuk Sesi 004 (Database).
