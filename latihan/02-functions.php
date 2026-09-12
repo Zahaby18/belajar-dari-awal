@@ -29,14 +29,9 @@ echo "\n";
 // Tugas 2
 echo number_format(1500000, 0, ",", ".") . "\n";
 
-function tambahTambahan(array $angka){
-    $jumlah = 0;
-
-    foreach($angka as $i){
-        $jumlah = $jumlah + $i;
-    }
-
-    return "Rp." . number_format($jumlah, 0, ",", ".");
+function formatRupiah(float $angka): string{
+    return "Rp." . number_format($angka, 0, ",", "."). ",-";
 }
 
-echo tambahTambahan([3000,5000]);
+echo formatRupiah(15000);
+echo formatRupiah(85000);
