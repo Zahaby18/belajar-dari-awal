@@ -13,7 +13,7 @@ echo hitungJumlah([10000, 20000, 30000]);   // 60000
 echo "\n";
 
 // Tugas 1
-function hitungTotal(array $harga, float $pajak) : float{
+function hitungTotal(array $harga, float $pajak): float{
     $hasil = 0;
     foreach($harga as $a){
         $hasil = $hasil + $a;
@@ -23,3 +23,20 @@ function hitungTotal(array $harga, float $pajak) : float{
 }
 
 echo hitungTotal([10000,20000],10);
+
+echo "\n";
+
+// Tugas 2
+echo number_format(1500000, 0, ",", ".") . "\n";
+
+function tambahTambahan(array $angka){
+    $jumlah = 0;
+
+    foreach($angka as $i){
+        $jumlah = $jumlah + $i;
+    }
+
+    return "Rp." . number_format($jumlah, 0, ",", ".");
+}
+
+echo tambahTambahan([3000,5000]);
