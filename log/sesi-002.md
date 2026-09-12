@@ -238,3 +238,39 @@ fc hasil.txt latihan\expected\02-functions.txt
 2. Ganti tes jadi `formatRupiah(1500000)` dan `formatRupiah(85000)`, kasih `"\n"`
 3. Jalankan `fc`/`diff` vs `latihan/expected/02-functions.txt` sampai "no differences"
 4. Baru commit + push
+
+---
+
+## Iterasi 7 - commit `49b25bf` -> BELUM COCOK (selisih 1 karakter lagi)
+**Hasil verifikasi:**
+```
+$ diff hasil.txt latihan/expected/02-functions.txt
+4,5c4,5
+< Rp 15.000.000,-
+< Rp 85.000,-
+---
+> Rp1.500.000,-
+> Rp85.000,-
+```
+
+### Apa yang berubah (kemajuan)
+Kamu menghapus titik setelah `Rp`. Arahnya sudah benar: `"Rp."` memang harus berubah.
+Tapi penggantinya `"Rp "` (pakai SPASI). Target minta `"Rp"` (menempel langsung ke angkanya).
+
+Komentar mentor: secara penulisan bahasa Indonesia, `Rp 1.500.000` memang lebih enak dibaca mata. Tapi ini bukan soal selera, ini soal **spesifikasi**. Yang menentukan benar/salah adalah target, bukan yang menurut kita lebih bagus. Di dunia nyata, format `Rp1.500.000,-` itu format yang dipakai di aplikasi keuangan dan e-commerce Indonesia (dan ini format yang sama dengan kalkulator di theme Genrolla kamu).
+
+### 3 sisa perbaikan
+1. `"Rp "` -> `"Rp"` (hapus spasi)
+2. `formatRupiah(15000000)` -> target materinya `1500000` (kebanyakan 1 nol)
+3. `echo formatRupiah(85000);` belum ada `"\n"` di akhir, jadi baris terakhir nggak punya pindah baris (itu sebabnya muncul "No newline at end of file" di output)
+
+### CATATAN PENTING: kenapa ini terjadi 4x berturut-turut
+Ini kali keempat kamu kirim revisi yang belum dicocokkan dengan target. Polanya sama: kamu run, kelihatan nggak ada error, terus lapor "udah". Tapi outputnya belum dibandingkan dengan patokan.
+
+Mulai sekarang berlaku **ATURAN BUKTI** (ditulis di `00-CARA-KERJA.md`):
+setiap lapor "udah" harus pakai bukti output `fc`/`diff`, dan `fc` harus bilang "no differences". Tanpa itu, belum gue review.
+
+Kalau kamu sudah jalankan `diff`, kamu akan lihat sendiri barisnya dan tidak perlu nunggu gue. Kamu udah punya alatnya sekarang, itu bagian yang bikin gue frustasi sedikit: **kamu bisa menemukan ini sendiri dalam 10 detik, tanpa gue.**
+
+### Larangan
+Jangan mengubah isi `latihan/expected/02-functions.txt` supaya cocok dengan output kamu. File itu patokan. Kalau patokannya digeser biar kelihatan benar, itu menipu diri sendiri.
