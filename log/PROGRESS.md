@@ -17,11 +17,10 @@
 | stokRendah | pola FILTER (akumulator RAK), array of array, `$hasil[] = $p` |
 | produkMahal | variasi MANDIRI tanpa contoh -> bukti transfer, bukan hafalan |
 | cariProduk | early return, `null`, `?array`, `===` |
+| tampilkanTabel | `str_pad` (kolom lurus), `str_repeat` (garis pemisah), `void` |
 
 ### Belum lulus
-| Tugas | Sisa |
-|---|---|
-| tampilkanTabel (06) | 2 hal: spasi setelah tanda `|`, dan baris pemisah `str_repeat("-", 34)` |
+(tidak ada. TUGAS 6 selesai di commit `8b79cbe` sebelum hari ditutup)
 
 ### Yang dibenerin dari nol sampai bisa
 1. Titik koma hilang -> parse error (1 karakter mematikan seluruh file)
