@@ -128,3 +128,62 @@ Pilihan yang bagus: langsung dihitung saat diserahkan, jadi nggak butuh baris as
 ### Progres
 - TUGAS 1 `hitungTotal`: LULUS
 - Berikutnya: TUGAS 2 `formatRupiah`
+
+---
+
+## Iterasi 5 - commit `5384610` -> TUGAS 2 BELUM LULUS
+**Hasil run:**
+```
+60000          <- hitungJumlah, benar
+33000          <- hitungTotal, benar
+1.500.000      <- tes number_format, BENAR (langkah 1-2 materi berhasil)
+Rp.8.000       <- function baru kamu, BELUM sesuai target
+```
+
+### Yang BENAR
+1. `number_format(1500000, 0, ",", ".")` -> kamu jalankan dan hasilnya `1.500.000`. Konsepnya sudah kamu dapat, ini bagian tersulitnya
+2. Format PSR-12 di `hitungTotal` sudah dibenerin (`): float{`)
+3. Sudah run, sudah lihat output
+
+### Kenapa belum lulus: spesifikasi tugas tidak dipenuhi
+Yang diminta di materi:
+```php
+formatRupiah(float $angka): string
+// formatRupiah(1500000) -> "Rp1.500.000,-"
+```
+Tugasnya: **terima SATU angka, ubah jadi teks rupiah.** Itu saja.
+
+Yang kamu bikin:
+```php
+function tambahTambahan(array $angka){
+    ...menjumlahkan array...
+    return "Rp." . number_format($jumlah, 0, ",", ".");
+}
+```
+Function ini melakukan **DUA tugas sekaligus**: menjumlahkan rak angka DAN memformat. Masalahnya bukan "salah", tapi design-nya bikin repot nanti:
+- Besok kamu butuh menampilkan harga satu produk (`Rp85.000`). Function kamu nggak bisa dipakai, karena dia butuh rak angka dan selalu menjumlahkan
+- Akibatnya kamu bakal bikin function kedua, ketiga, keempat yang isinya number_format lagi -> duplikasi
+- Aturan yang dipakai di industri: **satu function, satu tugas.** Kalau deskripsinya butuh kata "dan", itu tandanya harus dipecah
+- Bonus: menjumlahkan itu tugas `hitungJumlah` yang sudah kamu punya. Jangan ditulis ulang
+
+### Kesalahan format output
+```
+target : R p 1 . 5 0 0 . 0 0 0 , -
+kamu   : R p . 8 . 0 0 0
+```
+3 bedanya:
+1. Ada titik setelah `Rp`. Harus menempel: `"Rp"`
+2. Kurang `",-"` di belakang
+3. Angkanya beda, karena kamu tes pakai `[3000,5000]` bukan `1500000`
+
+### Catatan tambahan
+4. Return type `: string` belum ada. Kalau function mengembalikan teks, tulis `: string`. Gunanya: PHP jadi bisa nangkap kalau kamu tidak sengaja mengembalikan angka
+5. Nama `tambahTambahan` tidak menjelaskan apa-apa (dan artinya berulang: "tambah tambahan"). Nama function yang benar bisa dibaca seperti kalimat perintah: `formatRupiah`, `hitungTotal`, `stokRendah`
+6. Git bilang "No newline at end of file". Biasakan file diakhiri baris kosong. Sepele, tapi bikin diff git lebih bersih
+
+### Yang harus dikerjakan
+1. Ganti `tambahTambahan` jadi `formatRupiah(float $angka): string`, parameter tunggal, tanpa loop, tanpa penjumlahan
+2. Isinya: `return "Rp" . number_format(...) . ",-";` (perhatikan: `Rp` menempel, ada `,-` di belakang)
+3. Test: `echo formatRupiah(1500000) . "\n";` -> harus `Rp1.500.000,-`
+4. Test kedua: `echo formatRupiah(85000) . "\n";` -> harus `Rp85.000,-`
+5. Bandingkan karakter per karakter dengan target, baru commit + push
