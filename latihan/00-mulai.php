@@ -39,7 +39,7 @@ echo "\n\n=== TUGAS 5: array + foreach ===\n";
 $buah = ["apel", "jeruk", "mangga"];
 
 foreach($buah as $i){
-    echo $i . "/n";
+    echo $i . "\n";
 }
 
 
