@@ -274,3 +274,37 @@ Kalau kamu sudah jalankan `diff`, kamu akan lihat sendiri barisnya dan tidak per
 
 ### Larangan
 Jangan mengubah isi `latihan/expected/02-functions.txt` supaya cocok dengan output kamu. File itu patokan. Kalau patokannya digeser biar kelihatan benar, itu menipu diri sendiri.
+
+---
+
+## Iterasi 8 - TUGAS 3 percobaan pertama (dari chat)
+**Output yang dihasilkan:**
+```
+ArrayPHP Warning:  Array to string conversion in z.php on line 23
+```
+
+### Kesalahan 1: `if ($p < $batas)` -> `$p` itu RAK, bukan angka
+Kamu membandingkan rak dengan angka. Hasilnya selalu `false`, jadi nggak ada satu pun produk yang lolos.
+Dibuktikan:
+```php
+$p = ["nama" => "Teh", "stok" => 3];
+var_dump($p < 10);         // bool(false)  <- rak dibanding angka = selalu salah
+var_dump($p["stok"] < 10); // bool(true)   <- ini yang benar
+```
+
+### Kesalahan 2: `echo $p;` -> dilarang, dan salah tujuan
+Dua masalah sekaligus:
+1. `echo` itu buat teks/angka. `$p` itu rak, nggak bisa di-echo
+2. Lebih penting: function ini tugasnya MENGUMPULKAN dan MENYERAHKAN hasil (`return`), bukan mencetak. Di dalam `if`, yang benar barisnya `$hasil[] = $p;`
+
+### Kesalahan 3: `$hasil` selalu kosong
+Karena nggak ada satu baris pun yang menambahkan item ke `$hasil`. Akibatnya function mengembalikan rak kosong `[]`.
+Lalu di luar function, `echo stokRendah(...)` mencoba mencetak rak itu sebagai teks -> itulah asal pesan **"Array to string conversion"**: PHP bilang "gue nggak bisa nulis rak jadi teks, gue tulis `Array` aja".
+
+### Catatan
+Solusinya bukan mengganti echo dengan print_r, tapi memakai blok tes yang sudah disediakan di materi (count + foreach), supaya outputnya bisa dibandingkan dengan file target.
+
+### Progres
+- Struktur function, return type `: array`, dan deklarasi data -> benar semua
+- Sudah RUN dan berani tanya dengan membawa kode + pesan error -> ini kebiasaan yang gue mau
+- Berikutnya: perbaiki 3 hal di atas, lalu verifikasi dengan `fc`/`diff`
