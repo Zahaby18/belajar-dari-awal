@@ -1,0 +1,6 @@
+Nama           | Harga     | Stok
+----------------------------------
+Kopi Arabica   | 85000     | 12
+Teh Hijau      | 35000     | 3
+Cokelat Bubuk  | 62000     | 0
+Gula Aren      | 25000     | 20
