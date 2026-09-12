@@ -36,3 +36,26 @@ Sebelum commit, tanya diri sendiri: "output ini persis seperti yang gue mau ngga
 
 ### Catatan mentor
 Ini kesalahan tipe yang bikin orang tertawa di kantor, dan semua dev pernah mengalaminya. Yang bikin beda: dev yang jalanin kodenya lalu baca output akan ketemu sendiri dalam 5 detik. Dev yang asal push akan ketemu di depan klien.
+
+---
+
+## Iterasi 2 - commit `da73e8e` + merge `71d0f04`
+**Yang dikerjakan:** ganti `/n` jadi `\n` di baris 42
+**Hasil run:** BENAR
+```
+=== TUGAS 5: array + foreach ===
+apel
+jeruk
+mangga
+```
+exit code 0. Sesi 001 resmi 100% selesai.
+
+### Bonus: kamu mengalami merge pertama
+Commit `71d0f04` judulnya "betulin line 42 dan abis pull", dan itu **merge commit** (2 parent: da73e8e + 508b39c).
+Artinya yang terjadi: kamu `git push`, ditolak karena gue udah push duluan, kamu `git pull`, git gabungkan otomatis, terus push lagi. Sukses.
+Ini kejadian normal dalam kerja tim, bukan error. Di kantor, ini terjadi puluhan kali seminggu. Sekarang kamu udah pernah ngalamin, jadi tahun depan kalau ada orang baru panik karena "rejected", kamu bisa bantu.
+
+### Status
+- TUGAS 5: LULUS
+- Sesi 001: LULUS semua
+- Berikutnya: Sesi 002 TUGAS 1 (`hitungTotal`)
