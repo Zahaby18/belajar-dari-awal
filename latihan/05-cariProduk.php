@@ -11,7 +11,13 @@
 // Nggak ketemu -> serahkan null
 function cariProduk(array $produk, string $nama): ?array
 {
-    // TODO: tulis sendiri
+    foreach($produk as $p){
+        if ($p["nama"] === $nama){
+            return $p;
+        }
+    }
+
+    return null;
 }
 
 // ============================================================

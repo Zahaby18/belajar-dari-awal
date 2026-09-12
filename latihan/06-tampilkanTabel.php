@@ -12,9 +12,11 @@
 // baris 3+: satu baris per produk
 function tampilkanTabel(array $produk): void
 {
-    // TODO: tulis sendiri.
-    // Petunjuk panjang kolom: nama 15 karakter, harga 10 karakter.
-    // harga itu angka, jadi konversi dulu ke teks: (string)$p["harga"]
+    echo "Nama           | Harga     | Stok" . "\n";
+
+    foreach($produk as $p){
+        echo $p["nama"] . "|" . $p["harga"] . "    |" . $p["stok"] . "\n" ;
+    }
 }
 
 // ============================================================
