@@ -9,12 +9,14 @@
 // Contoh: produkMahal($produk, 60000) -> produk yang harganya >= 60000
 function produkMahal(array $produk, int $hargaMinimal): array
 {
-    // TODO: isi sendiri. Polanya sama:
-    // 1. siapkan rak kosong
-    // 2. foreach $produk sebagai $p
-    // 3. if harga produk ini >= hargaMinimal  (label harga: $p["harga"])
-    // 4. masukkan ke rak hasil
-    // 5. return rak hasilnya
+    $hasil = [];
+    foreach ($produk as $p) {
+        if ($p["harga"] >= $hargaMinimal) {
+            $hasil[] = $p;
+        }
+    }
+
+    return $hasil;
 }
 
 // ============================================================
