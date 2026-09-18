@@ -43,7 +43,7 @@ $db->exec("CREATE TABLE IF NOT EXISTS
 $stmt = $db->prepare("INSERT INTO produk (nama, harga, stok) VALUES (?, ?, ?)");
 $stmt->execute(["Kopi Arabica", 85000, 12]);
 $stmt->execute(["Teh Hijau", 35000, 3]);
-$stmt->execute(["Coklat Bubuk", 62000, 0]);
+$stmt->execute(["Cokelat Bubuk", 62000, 0]);
 $stmt->execute(["Gula Aren", 25000, 20]);
 
 // ============================================================
