@@ -23,6 +23,14 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //   nama   TEXT
 //   harga  INTEGER
 //   stok   INTEGER
+$db->exec("CREATE TABLE IF NOT EXISTS 
+    produk (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nama TEXT NOT NULL,
+        harga INTEGER NOT NULL,
+        stok INTEGER NOT NULL
+)");
+
 
 // TODO 2: isi 4 produk pakai prepared statement
 //   Kopi Arabica    85000   12
@@ -31,6 +39,12 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //   Gula Aren       25000   20
 // Petunjuk: bikin $stmt = $db->prepare(...) SEKALI, lalu panggil ->execute([...]) berkali-kali
 // (boleh juga pakai array produk + foreach)
+
+$stmt = $db->prepare("INSERT INTO produk (nama, harga, stok) VALUES (?, ?, ?)");
+$stmt->execute(["Kopi Arabica", 85000, 2]);
+$stmt->execute(["Teh Hijau", 35000, 2]);
+$stmt->execute(["Coklat Bubuk", 62000, 2]);
+$stmt->execute(["Gula Aren", 25000, 2]);
 
 // ============================================================
 // BAGIAN TES - jangan diubah
