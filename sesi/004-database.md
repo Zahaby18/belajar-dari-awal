@@ -114,6 +114,52 @@ fc hasil8.txt latihan\expected\08-db-baca.txt
 ```
 File `latihan/toko.sqlite` sudah masuk `.gitignore`, jadi database kamu nggak ikut ke-commit (data tidak masuk repo, strukturnya ada di kode).
 
+## 5. BANDINGKAN: function yang MENCETAK vs function yang MENYERAHKAN
+Ini kesalahan paling sering di sesi ini, jadi hafalkan bedanya.
+
+```php
+// VERSI 1: function yang MENCETAK (return type: void)
+// Pakai ini kalau tugasnya cuma menampilkan sesuatu ke layar
+function cetakSayur(PDO $db): void
+{
+    foreach ($db->query("SELECT * FROM sayur ORDER BY id")->fetchAll() as $s) {
+        echo "cetak: " . $s["nama"] . "\n";
+    }
+}
+
+// VERSI 2: function yang MENYERAHKAN hasil (return type: array)
+// Pakai ini kalau hasilnya mau diolah lagi (dihitung, disaring, diurutkan)
+function ambilSayur(PDO $db): array
+{
+    return $db->query("SELECT * FROM sayur ORDER BY id")->fetchAll();
+}
+
+// VERSI 3: cari 1 baris, pakai prepared statement, null kalau nggak ada
+function cariSayurById(PDO $db, int $id): ?array
+{
+    $stmt = $db->prepare("SELECT * FROM sayur WHERE id = ? LIMIT 1");
+    $stmt->execute([$id]);
+    $row = $stmt->fetch();
+    return $row === false ? null : $row;
+}
+```
+
+Hasil jalan:
+```
+cetak: Bayam
+cetak: Brokoli
+jumlah: 2
+Brokoli
+TIDAK KETEMU
+```
+
+### Aturan yang wajib diingat
+1. Kalau return type-nya `array`, `string`, `int`, `float`, atau `?array`: **function WAJIB `return`**. Kalau tidak, PHP melempar TypeError dan program mati
+2. Kalau function-nya `void`: di dalamnya **cukup `echo`**, jangan `return` nilai
+3. **Jangan mencetak di dalam function kalau di luar sudah ada yang mencetak.** Kalau dua-duanya mencetak, output kamu jadi dobel
+4. `fetchAll()` = ambil SEMUA baris. `fetch()` = ambil SATU baris
+5. `fetch()` mengembalikan `false` kalau datanya nggak ada, dan `false` bukan `null`. Makanya dikonversi: `return $row === false ? null : $row;` (ini pola `?` ternary: "kalau kosong pakai null, kalau ada pakai barisnya")
+
 ## Setelah 004 lulus
 Kamu sudah bisa: PHP, function, array, pola filter/cari, dan database.
 Berikutnya Sesi 005: **HTML + form + CSS** -> baru setelah itu **Laravel**, karena di Laravel semua ini bakal dipakai sekaligus: route, controller, Eloquent (yang sebenarnya adalah PDO+SQL yang lebih nyaman).
