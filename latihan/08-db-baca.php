@@ -14,10 +14,7 @@ declare(strict_types=1);
 function ambilSemuaProduk(PDO $db): array
 {
     // TODO 1: SELECT * FROM produk ORDER BY id, lalu fetchAll()
-    $stmt = $db->query("SELECT * FROM produk ORDER BY id");
-    foreach ($stmt->fetchAll() as $s) {
-        echo $s["id"] . " - " . $s["nama"] . " - " . $s["harga"] . "\n";
-    }
+    return $db->query("SELECT * FROM produk ORDER BY id")->fetchAll();
 }
 
 // Cari 1 produk berdasarkan id.
@@ -27,10 +24,10 @@ function cariProdukById(PDO $db, int $id): ?array
 {
     // TODO 2: bikin SELECT ... WHERE id = ? pakai prepared statement
     // TODO 3: ambil 1 barisnya; kalau kosong balikin null
-    $stmt = $db->query("SELECT * FROM produk WHERE id=$id");
-    foreach ($stmt->fetchAll() as $s) {
-        echo $s["id"] . " - " . $s["nama"] . " - " . $s["harga"] . "\n";
-    }
+    $stmt = $db->prepare("SELECT * FROM produk WHERE id= ? LIMIT 1");
+    $stmt->execute([$id]);
+    $row = $stmt->fetch();
+    return $row === false ? null : $row;
 }
 
 // ============================================================

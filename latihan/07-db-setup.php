@@ -41,10 +41,10 @@ $db->exec("CREATE TABLE IF NOT EXISTS
 // (boleh juga pakai array produk + foreach)
 
 $stmt = $db->prepare("INSERT INTO produk (nama, harga, stok) VALUES (?, ?, ?)");
-$stmt->execute(["Kopi Arabica", 85000, 2]);
-$stmt->execute(["Teh Hijau", 35000, 2]);
-$stmt->execute(["Coklat Bubuk", 62000, 2]);
-$stmt->execute(["Gula Aren", 25000, 2]);
+$stmt->execute(["Kopi Arabica", 85000, 12]);
+$stmt->execute(["Teh Hijau", 35000, 3]);
+$stmt->execute(["Coklat Bubuk", 62000, 0]);
+$stmt->execute(["Gula Aren", 25000, 20]);
 
 // ============================================================
 // BAGIAN TES - jangan diubah
