@@ -73,28 +73,36 @@ Kode selesai bukan kalau udah ditulis. Kode selesai kalau:
 Setiap latihan punya file target output di folder `latihan/expected/`. Contoh: `latihan/expected/02-functions.txt`.
 Isinya output yang SEHARUSNYA keluar, baris per baris.
 
-**Langkahnya (Windows):**
+**Cara PALING GAMPANG (kamu sudah punya git, jadi ini pasti jalan):**
 ```
-php latihan/02-functions.php > hasil.txt
-fc hasil.txt latihan\expected\02-functions.txt
+php latihan/07-db-setup.php > hasil7.txt
+git diff --no-index hasil7.txt latihan/expected/07-db-setup.txt
 ```
-- `> hasil.txt` = simpan output ke file, bukan cuma tampil di layar
-- `fc` = bandingkan 2 file. Kalau cocok, dia bilang "FC: no differences encountered"
+- `> hasil7.txt` = simpan output ke file, bukan cuma tampil di layar
+- `git diff --no-index` = bandingkan 2 file
+- **Kalau nggak muncul apa-apa, artinya COCOK SEMPURNA** (git cuma ngomong kalau ada beda)
 
-**Kalau pakai Git Bash / Mac / Linux:**
+**Kalau kamu di Command Prompt (cmd):**
 ```
-php latihan/02-functions.php > hasil.txt
-diff hasil.txt latihan/expected/02-functions.txt
+fc.exe hasil7.txt latihan\expected\07-db-setup.txt
 ```
-Kalau `diff` nggak ngeluarin apa-apa, artinya COCOK SEMPURNA.
+Perhatiin: `fc.exe`, pakai `.exe`.
 
-**Kalau beda, `diff` akan nunjukin baris mana yang beda:**
+**JANGAN pakai `fc` doang kalau kamu di PowerShell.** Di PowerShell, `fc` itu singkatan dari `Format-Custom`, bukan file compare. Itu sebabnya error. Kalau di PowerShell, pakai salah satu dari ini:
+```
+Compare-Object (Get-Content hasil7.txt) (Get-Content latihan\expected\07-db-setup.txt)
+```
+atau lebih enak, pakai git yang di atas.
+
+**Kalau beda, outputnya nunjukin baris mana yang beda:**
 ```
 < Rp.15.000,-          <- tanda < artinya isi file KAMU
 > Rp1.500.000,-        <- tanda > artinya isi file TARGET
 ```
 Tanda `<` = punyamu, `>` = target. Baca per karakter. Contoh di atas: ada titik setelah `Rp` yang seharusnya nggak ada.
 
-`hasil.txt` udah masuk `.gitignore`, jadi nggak akan ke-commit.
+**Kalau semua cara di atas tetap bikin ribet**, cara terakhir yang tetap sah: paste output hasil run kamu ke chat, gue yang bandingin. Tapi saran gue tetap pakai `git diff --no-index`, karena itu yang bikin kamu bisa nemu kesalahan sendiri dalam 5 detik.
 
-**Kenapa ini penting:** mata manusia itu payah membandingkan teks panjang. `fc`/`diff` nggak pernah salah dan nggak pernah lupa. Programmer profesional pakai alat ini setiap hari, bukan ngandelin feeling.
+`hasil*.txt` udah masuk `.gitignore`, jadi nggak akan ke-commit.
+
+**Kenapa ini penting:** mata manusia itu payah membandingkan teks panjang. Alat pembanding nggak pernah salah dan nggak pernah lupa. Programmer profesional pakai alat ini setiap hari, bukan ngandelin feeling.

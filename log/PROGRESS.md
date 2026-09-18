@@ -44,7 +44,27 @@
 - Koreksi dari Zahab (12 Sep): aturan "mentee nulis dulu tanpa contoh" kekerasan untuk pemula syntax 0 -> direvisi jadi tangga 3 tingkat
 - Kecepatan belajar termasuk cepat. Yang perlu dijaga: konsistensi, bukan kecepatan
 
+## HARI 3 - 18 Sep 2026 (SESI 004 - DATABASE)
+### Lulus
+| Tugas | Konsep yang dikuasai |
+|---|---|
+| 07-db-setup | PDO connect, `exec(CREATE TABLE)`, `prepare` + `execute` berulang, tipe data kolom |
+| 08-db-baca | function `: array` wajib `return` (bukan echo), prepared statement `?`, `fetch()` untuk 1 baris, konversi `false` -> `null`, ternary |
+
+Data di database juga diverifikasi manual: 4 produk, stok 12/3/0/20 (termasuk nilai yang tidak dicek oleh test).
+
+### Yang dibenerin hari ini
+1. Function di-`echo` padahal return type `: array` -> TypeError fatal
+2. `WHERE id=$id` tempel langsung -> diganti prepared statement `?`
+3. Typo "Coklat" vs "Cokelat" di sumber data 07 -> bikin 2 test gagal (pelajaran: benerin di sumbernya, karena data mengalir)
+4. Stok semua diisi 2 -> test tidak menangkap, tapi data tetap salah (pelajaran: test punya batas)
+
+### Masalah alat
+`fc` nggak jalan di komputernya Zahab karena di PowerShell `fc` = alias `Format-Custom`. Diganti `git diff --no-index` (pasti jalan, dia punya git). Panduan sudah diperbarui.
+
+### Reaksi yang dicatat
+Zahab bilang "nyerah" di tengah Tugas 08, padahal gap-nya cuma 4 baris. Setelah dibantu dipecah, selesai dalam satu iterasi. Monitor: jangan biarkan "nyerah" jadi kebiasaan; selalu kecilkan masalahnya jadi langkah konkret.
+
 ## BERIKUTNYA
-1. Selesaikan 06-tampilkanTabel (5 menit: spasi setelah `|` + baris pemisah)
-2. **Sesi 004 - Database (PDO + SQLite)**: nyambung ke DB, INSERT/SELECT/UPDATE/DELETE. Ini pintu masuk Laravel
-3. Setelah database: HTML + form + CSS, baru Laravel
+1. **Sesi 005 - Halaman web pertama (HTML + form + browser)**: hasil kerja Zahab akhirnya kelihatan di browser, bukan cuma teks terminal
+2. Setelah itu: validasi input + XSS, baru masuk Laravel

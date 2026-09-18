@@ -23,12 +23,13 @@ Peran kamu: satu-satunya yang nulis kode.
 - 5 menit: tulis log sesi + commit + tentukan target sesi berikutnya
 
 ## ATURAN BUKTI (berlaku mulai Sesi 002)
-Setiap kali lapor "udah", wajib sertakan output bukti verifikasinya:
+Setiap kali lapor "udah", wajib sertakan bukti verifikasinya:
 ```
-php latihan/02-functions.php > hasil.txt
-fc hasil.txt latihan\expected\02-functions.txt
+php latihan/07-db-setup.php > hasil7.txt
+git diff --no-index hasil7.txt latihan/expected/07-db-setup.txt
 ```
-Paste hasil `fc`/`diff` itu di chat. Kalau `fc` belum bilang "no differences", berarti belum selesai dan belum gue review.
+Paste hasilnya di chat. Kalau `git diff --no-index` belum kosong, berarti belum selesai dan belum gue review.
+CATATAN: `git diff --no-index` dipilih karena pasti jalan di komputernya Zahab (dia punya git). `fc` TIDAK dipakai karena di PowerShell `fc` itu alias `Format-Custom`, bukan file compare. Kalau tetap ribet, paste output mentahnya ke chat, gue yang bandingin.
 Alasan aturan ini: "nggak ada error" bukan bukti apa-apa. Yang jadi bukti cuma output yang sama persis dengan target.
 Larangan: **jangan pernah mengedit file di `latihan/expected/` biar cocok sama output kamu.** File target itu patokan, bukan hasil kerjamu. Kalau kamu mengubah target supaya kodenya kelihatan benar, itu bukan belajar, itu menipu diri sendiri.
 
