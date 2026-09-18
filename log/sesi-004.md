@@ -57,3 +57,46 @@ Jadi untuk `cariProdukById`: `$row = $stmt->fetch();` lalu `return $row === fals
 
 ### Catatan mentor
 Zahab bilang "nyerah" di Tugas 8, padahal gap-nya cuma 4 baris dan semua kesalahannya konsep yang sudah pernah dia lalui (return vs echo). Reaksi yang perlu: kecilkan masalahnya, tunjukkan bahwa errornya sudah menjelaskan dirinya sendiri, dan jangan biarkan kata "nyerah" jadi kebiasaan. Yang bikin dia mentok sebenarnya cuma satu: mengira function wajib mencetak.
+
+---
+
+## Iterasi 2 - commit `5ec3ef5` ("Fixing Latihan 7 dan 8")
+
+### TUGAS 08: STRUKTUR SUDAH BENAR SEMUA
+```php
+function ambilSemuaProduk(PDO $db): array
+{
+    return $db->query("SELECT * FROM produk ORDER BY id")->fetchAll();
+}
+
+function cariProdukById(PDO $db, int $id): ?array
+{
+    $stmt = $db->prepare("SELECT * FROM produk WHERE id= ? LIMIT 1");
+    $stmt->execute([$id]);
+    $row = $stmt->fetch();
+    return $row === false ? null : $row;
+}
+```
+Yang benar:
+- `return` sudah dipakai, bukan `echo` -> TypeError hilang
+- Prepared statement dengan `?` + `execute([$id])` -> pola aman
+- `fetch()` untuk 1 baris + konversi `false` -> `null` pakai ternary
+- Tidak ada echo di dalam function -> output dobel hilang
+
+Nilai konsep Tugas 08: LULUS. Outputnya: `4 / 1 - Kopi Arabica - 85000 / ... / Teh Hijau / TIDAK KETEMU`, semua urut dan benar.
+
+### TAPI 07 DAN 08 MASIH GAGAL, dan gagalnya di SATU HURUF YANG SAMA
+```
+07: < Coklat Bubuk   > Cokelat Bubuk
+08: < 3 - Coklat Bubuk - 62000   > 3 - Cokelat Bubuk - 62000
+```
+Sebabnya: typo itu ada di file 07 (data dimasukkan ke database), dan 08 cuma MEMBACA database yang dibuat 07. Jadi satu huruf salah di sumber data bikin DUA test gagal sekaligus.
+
+**Pelajaran nyata:** data itu mengalir. Kalau kamu benerin di tempat yang salah (misal nulis ulang output di 08), masalahnya tetap ada di database, dan besok-besok bakal muncul lagi di tempat lain. Selalu benerin di SUMBERNYA.
+
+Juga: `07` menghapus database lama dan bikin baru setiap dijalankan. Jadi urutannya wajib: benerin 07 -> run 07 -> baru run 08. Kalau 08 dijalankan duluan, database-nya masih isi data lama yang typo.
+
+### Sisa pekerjaan
+1. Ganti `Coklat` jadi `Cokelat` di `07-db-setup.php`
+2. Run 07 (bikin ulang database), baru run 08
+3. `fc` dua-duanya sampai "no differences"
