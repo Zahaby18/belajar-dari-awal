@@ -65,6 +65,19 @@ Data di database juga diverifikasi manual: 4 produk, stok 12/3/0/20 (termasuk ni
 ### Reaksi yang dicatat
 Zahab bilang "nyerah" di tengah Tugas 08, padahal gap-nya cuma 4 baris. Setelah dibantu dipecah, selesai dalam satu iterasi. Monitor: jangan biarkan "nyerah" jadi kebiasaan; selalu kecilkan masalahnya jadi langkah konkret.
 
+## HARI 4 - 19 Sep 2026 (SESI 005 - HALAMAN WEB PERTAMA)
+### Lulus
+| Tugas | Konsep yang dikuasai |
+|---|---|
+| 09-halaman | HTML dasar, nyampur PHP+HTML, loop di dalam HTML (`foreach:`/`endforeach;`), `htmlspecialchars()` (anti XSS), tag berpasangan, server bawaan `php -S` |
+
+Cek otomatis `cekj-09.php`: 11 PASS. Validasi HTML pakai parser: struktur valid, tidak ada tag menggantung.
+
+### Pelajaran penting hari ini
+1. **Browser itu pemaaf.** HTML rusak (`<tr>` ditulis `<tr>` bukan `</tr>`) tetap tampil normal di browser. Kelihatan bagus di layar bukan bukti kode benar
+2. **Test hijau bukan jaminan.** Pengecekan awal (9 poin) tidak menangkap bug `</tr>` karena tidak menguji keseimbangan tag. Setelah ditambah 2 pengecekan (total 11), bug-nya ketangkep. Ini contoh nyata keterbatasan test
+3. `htmlspecialchars()` dipakai benar di percobaan pertama -> kesadaran keamanan XSS sudah ada
+
 ## BERIKUTNYA
-1. **Sesi 005 - Halaman web pertama (HTML + form + browser)**: hasil kerja Zahab akhirnya kelihatan di browser, bukan cuma teks terminal
-2. Setelah itu: validasi input + XSS, baru masuk Laravel
+1. **Sesi 006 - Form tambah produk**: form HTML + `$_POST` + validasi input + INSERT ke database + redirect setelah simpan (biar refresh tidak double-submit). Di akhir sesi ini Zahab sudah punya aplikasi CRUD yang bisa dipakai
+2. Setelah itu: update + hapus data, lalu validasi lebih ketat, baru masuk Laravel

@@ -35,3 +35,27 @@ Hasil setelah penambahan:
 1. Ganti `<tr>` jadi `</tr>` di akhir tiap baris produk
 2. `php latihan/cek-09.php` harus 11 PASS
 3. Commit + push
+
+---
+
+## Iterasi 2 - commit `21d1b37` ("benerin /tr di latihan 09") -> TUGAS 09 LULUS
+Cek otomatis: **11 PASS / 0 FAIL**
+
+Validasi tambahan yang dilakukan mentor (pakai HTML parser, bukan cuma hitung string):
+```
+tag count      : <tr>=5  </tr>=5  <td>=16  </td>=16
+error struktur : TIDAK ADA
+belum ditutup  : tidak ada
+```
+Jadi HTML-nya sekarang valid secara struktur, bukan cuma "kelihatan bagus di browser".
+
+### Progres sesi 005
+- HTML dasar + kerangka halaman (`<!DOCTYPE html>`, `<head>`, `<meta charset>`, `<title>`)
+- Menyambung PHP dan HTML dalam satu file
+- Loop di dalam HTML: `foreach (...) :` + `endforeach;`
+- `htmlspecialchars()` untuk mencegah XSS -> dipakai benar sejak percobaan pertama
+- Tag berpasangan: `<tr>`/`</tr>`, `<td>`/`</td>`
+- Berjalan di server bawaan PHP (`php -S localhost:8000`)
+- Pelajaran besar: test hijau bukan jaminan benar (bug `</tr>` lolos dari 9 pengecekan awal)
+
+### TUGAS 09: LULUS
