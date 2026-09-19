@@ -1,5 +1,11 @@
 <?php
 // ============================================================
+// SESI TERKAIT : sesi/002-function-olah-data.md
+// STATUS       : LULUS
+// Buka file sesi itu buat baca materinya, dan cek PETA-MATERI.md
+// kalau bingung nyocokin sesi sama latihan.
+// ============================================================
+// ============================================================
 // TUGAS 4 - LATIHAN MANDIRI (tanpa contoh)
 // Polanya SAMA PERSIS dengan stokRendah. Cuma pertanyaannya yang beda.
 // Kerjakan ini SETELAH kamu ngetik ulang solusi 03 dan lulus verifikasi.

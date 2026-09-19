@@ -1,4 +1,10 @@
 <?php
+// ============================================================
+// SESI TERKAIT : sesi/005-halaman-web.md
+// STATUS       : LULUS (11 PASS di cek-09.php)
+// Buka file sesi itu buat baca materinya, dan cek PETA-MATERI.md
+// kalau bingung nyocokin sesi sama latihan.
+// ============================================================
 declare(strict_types=1);
 
 // ============================================================

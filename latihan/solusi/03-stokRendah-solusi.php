@@ -1,5 +1,11 @@
 <?php
 // ============================================================
+// SESI TERKAIT : sesi/002-function-olah-data.md
+// STATUS       : CONTOH JAWABAN
+// Buka file sesi itu buat baca materinya, dan cek PETA-MATERI.md
+// kalau bingung nyocokin sesi sama latihan.
+// ============================================================
+// ============================================================
 // SOLUSI TUGAS 3 - stokRendah
 // ATURAN: JANGAN COPY PASTE. Ketik ulang pakai tanganmu sendiri.
 // Copy paste = nggak ada yang nempel di otak. Ngetik ulang = nempel.

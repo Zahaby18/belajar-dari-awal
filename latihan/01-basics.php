@@ -1,4 +1,10 @@
 <?php
+// ============================================================
+// SESI TERKAIT : sesi/001-php-dasar.md
+// STATUS       : DITUNDA - nanti dikerjakan setelah sesi 003
+// Buka file sesi itu buat baca materinya, dan cek PETA-MATERI.md
+// kalau bingung nyocokin sesi sama latihan.
+// ============================================================
 declare(strict_types=1);
 
 // ============================================================

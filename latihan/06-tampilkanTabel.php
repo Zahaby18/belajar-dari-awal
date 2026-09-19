@@ -1,5 +1,11 @@
 <?php
 // ============================================================
+// SESI TERKAIT : sesi/003-cari-dan-tampilkan.md
+// STATUS       : LULUS
+// Buka file sesi itu buat baca materinya, dan cek PETA-MATERI.md
+// kalau bingung nyocokin sesi sama latihan.
+// ============================================================
+// ============================================================
 // TUGAS 6 - tampilkanTabel
 // Konsep str_pad + void sudah dicontohkan di sesi/003 (cetakDaftarBuah).
 // Ini level 2: kamu tulis sendiri.

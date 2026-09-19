@@ -1,4 +1,10 @@
 <?php
+// ============================================================
+// SESI TERKAIT : sesi/002-function-olah-data.md
+// STATUS       : LULUS
+// Buka file sesi itu buat baca materinya, dan cek PETA-MATERI.md
+// kalau bingung nyocokin sesi sama latihan.
+// ============================================================
 function stokRendah(array $produk, int $batas): array
 {
     $hasil = [];

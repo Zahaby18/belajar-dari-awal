@@ -1,4 +1,9 @@
 # SESI 004 - DATABASE (PDO + SQLite)
+
+> **LATIHAN TERKAIT:**
+> - `latihan/07-db-setup.php` (Tugas 07)
+> - `latihan/08-db-baca.php` (Tugas 08)
+
 Ini sesi paling penting sejauh ini. Sampai sekarang data kamu cuma hidup selama program jalan. Setelah ini, data bisa disimpan permanen. Dan inilah dasar dari semua aplikasi web, termasuk Laravel.
 
 ---

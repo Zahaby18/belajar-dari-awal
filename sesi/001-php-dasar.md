@@ -1,4 +1,8 @@
 # SESI 001 - PHP Dasar (kamu nulis, gue review)
+
+> **LATIHAN TERKAIT:**
+> - `latihan/01-basics.php` (5 function, masih ditunda)
+
 Estimasi: 2 jam. Target: setelah sesi ini kamu BISA NULIS PHP tanpa AI.
 
 ## Sebelum mulai: file apa ini

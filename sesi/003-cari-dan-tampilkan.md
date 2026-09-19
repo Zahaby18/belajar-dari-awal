@@ -1,4 +1,9 @@
 # SESI 003 - MENCARI DATA & MENAMPILKAN TABEL
+
+> **LATIHAN TERKAIT:**
+> - `latihan/05-cariProduk.php` (Tugas 5)
+> - `latihan/06-tampilkanTabel.php` (Tugas 6)
+
 Kamu sudah lulus: saring data (filter). Sesi ini 2 pola baru, dua-duanya kamu pakai terus sampai kerja.
 
 ---

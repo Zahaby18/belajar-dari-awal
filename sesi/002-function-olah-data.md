@@ -1,4 +1,11 @@
 # SESI 002 - FUNCTION YANG MENGOLAH DATA
+
+> **LATIHAN TERKAIT:**
+> - `latihan/02-functions.php` (Tugas 1 hitungTotal, Tugas 2 formatRupiah)
+> - `latihan/03-stokRendah.php` (Tugas 3)
+> - `latihan/04-produkMahal.php` (Tugas 4)
+> - `latihan/solusi/03-stokRendah-solusi.php` (contoh jawaban Tugas 3)
+
 Target sesi ini: 2 function selesai, dan kamu PAHAM tiap barisnya.
 Jangan kerjakan file `01-basics.php` secara keseluruhan. Kita potong kecil, satu function satu waktu.
 

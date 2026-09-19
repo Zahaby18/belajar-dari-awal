@@ -1,4 +1,9 @@
 # SESI 005 - HALAMAN WEB PERTAMA (HTML + PHP)
+
+> **LATIHAN TERKAIT:**
+> - `latihan/09-halaman.php` (Tugas 09)
+> - `latihan/cek-09.php` (alat pengecekan otomatis)
+
 Sampai sekarang semua hasil kerjamu cuma berupa teks di terminal. Sesi ini kamu bikin **halaman web** yang bisa dibuka di browser.
 
 ---

@@ -25,6 +25,12 @@ Kalau belum bisa jalanin PHP di komputermu: edit filenya, bilang "udah" di chat,
 
 ---
 
+## Bingung nyocokin sesi sama latihan?
+Buka **`PETA-MATERI.md`**. Di situ ada tabel: sesi mana -> latihan mana -> statusnya apa.
+Setiap file juga punya petunjuknya sendiri:
+- Di file `sesi/`: ada blok **LATIHAN TERKAIT** di bawah judul
+- Di file `latihan/`: ada komentar **SESI TERKAIT** + status di 6 baris pertama
+
 ## Alur kerja kita
 1. Gue tulis materi di `sesi/` + kerangka tugas di `latihan/`
 2. Kamu isi `latihan/` sambil baca `sesi/`

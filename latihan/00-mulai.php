@@ -1,5 +1,11 @@
 <?php
 // ============================================================
+// SESI TERKAIT : sesi/001-php-survival.md
+// STATUS       : LULUS
+// Buka file sesi itu buat baca materinya, dan cek PETA-MATERI.md
+// kalau bingung nyocokin sesi sama latihan.
+// ============================================================
+// ============================================================
 // SESI 001 - 6 TUGAS KECIL
 // Cara jalanin: php latihan/00-mulai.php
 // Isi bagian TODO saja. Jangan hapus baris yang lain.

@@ -1,4 +1,10 @@
 <?php
+// ============================================================
+// SESI TERKAIT : sesi/004-database.md
+// STATUS       : LULUS
+// Buka file sesi itu buat baca materinya, dan cek PETA-MATERI.md
+// kalau bingung nyocokin sesi sama latihan.
+// ============================================================
 declare(strict_types=1);
 
 // ============================================================

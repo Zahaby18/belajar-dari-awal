@@ -1,5 +1,11 @@
 <?php
 // ============================================================
+// SESI TERKAIT : sesi/003-cari-dan-tampilkan.md
+// STATUS       : LULUS
+// Buka file sesi itu buat baca materinya, dan cek PETA-MATERI.md
+// kalau bingung nyocokin sesi sama latihan.
+// ============================================================
+// ============================================================
 // TUGAS 5 - cariProduk
 // Ini konsep yang SUDAH kamu lihat contohnya di sesi/003 (cariBuah).
 // Jadi ini level 2: kamu tulis sendiri, contohnya nggak ditaruh di file ini.

@@ -1,4 +1,9 @@
 # SESI 001 - SURVIVAL KIT PHP (paling dasar)
+
+> **LATIHAN TERKAIT:**
+> - `latihan/00-mulai.php` (Tugas 1-6 kecil)
+> - `latihan/01-basics.php` (versi berat, DITUNDA - materinya di sesi/001-php-dasar.md)
+
 Ganti target: bikin kamu bisa NULIS PHP dari nol, mulai dari 1 baris.
 Estimasi: 45 menit total, 6 tugas kecil. Tugas 1 udah dikasih jawabannya biar kamu lihat polanya.
 
