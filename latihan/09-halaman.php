@@ -59,7 +59,7 @@ $produk = $db->query("SELECT * FROM produk ORDER BY id")->fetchAll();
                 <td><?php echo htmlspecialchars($p["nama"]); ?></td>
                 <td><?php echo $p["harga"]; ?></td>
                 <td><?php echo $p["stok"]; ?></td>
-            <tr>
+            </tr>
         <?php endforeach; ?>
     </table>
 
