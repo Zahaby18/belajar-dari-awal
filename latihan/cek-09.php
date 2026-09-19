@@ -32,6 +32,10 @@ $cek["ada minimal 16 sel <td> (4 produk x 4 kolom)"] = $jumlahTd >= 16;
 
 $cek["jumlah produk tercetak"] = strpos($hasil, "Total produk: 4") !== false;
 
+// CEK TAG BERPASANGAN (ditemukan 19 Sep: Zahab lupa tutup </tr> dan pengecekan lama tidak menangkapnya)
+$cek["jumlah <tr> sama dengan jumlah </tr>"] = substr_count($hasil, "<tr>") === substr_count($hasil, "</tr>");
+$cek["jumlah <td> sama dengan jumlah </td>"] = substr_count($hasil, "<td>") === substr_count($hasil, "</td>");
+
 // tampilkan hasil
 $lulus = 0;
 $gagal = 0;
