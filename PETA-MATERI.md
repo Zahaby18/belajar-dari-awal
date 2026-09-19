@@ -33,7 +33,8 @@ Angka di nama file **bukan** pasangan otomatis. Satu sesi bisa punya beberapa la
 |---|---|
 | `latihan/cek-09.php` | pengecekan otomatis Tugas 09 (11 poin PASS/FAIL) |
 | `latihan/cek-10.php` | pengecekan otomatis Tugas 10 |
-| `latihan/cek-10-kirim.php` | simulasi kiriman form (dipakai oleh cek-10) |
+| `latihan/cek-10-kirim.php` | simulasi kiriman form POST (dipakai oleh cek-10) |
+| `latihan/cek-10-buka.php` | simulasi buka halaman dari browser / request GET |
 | `latihan/expected/*.txt` | output patokan buat dibandingin |
 | `PANDUAN-GIT.md` | cara pull, commit, push |
 | `PANDUAN-RUN-PHP.md` | cara run, cara bandingin output dengan target |
