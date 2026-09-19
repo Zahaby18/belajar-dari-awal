@@ -52,9 +52,17 @@ $produk = $db->query("SELECT * FROM produk ORDER BY id")->fetchAll();
         //
         // Ingat: tutup loop pakai endforeach, bukan kurung kurawal.
         // Dan jangan lupa: pembuka dan penutup PHP dipisah, lihat materi kalau ragu.
-        ?>
+
+        foreach($produk as $p) : ?>
+            <tr>
+                <td><?php echo $p["id"] ?></td>
+                <td><?php echo htmlspecialchars($p["nama"]); ?></td>
+                <td><?php echo $p["harga"]; ?></td>
+                <td><?php echo $p["stok"]; ?></td>
+            <tr>
+        <?php endforeach; ?>
     </table>
 
-    <p>Total produk: <?= 0 /* TODO 2: ganti 0 ini dengan count($produk) */ ?></p>
+    <p>Total produk: <?= count($produk);  ?></p>
 </body>
 </html>

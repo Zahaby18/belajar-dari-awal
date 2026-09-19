@@ -39,6 +39,7 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $semua = ambilSemuaProduk($db);
 echo count($semua) . "\n";
+
 foreach ($semua as $p) {
     echo $p["id"] . " - " . $p["nama"] . " - " . $p["harga"] . "\n";
 }
