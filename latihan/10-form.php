@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     //   - setelah itu: header("Location: 10-form.php"); exit;
     if($error === []){
         $stmt = $db->prepare("INSERT INTO produk(nama,harga,stok) VALUES (?,?,?)");
-        $stmt->execute([$inputNama, int($inputHarga), int($inputStok)]);
+        $stmt->execute([$inputNama, (int)$inputHarga, (int)$inputStok]);
 
         header("Location: 10-form.php");
         exit;
@@ -105,13 +105,13 @@ $produk = $db->query("SELECT * FROM produk ORDER BY id")->fetchAll();
         //   dan WAJIB dibungkus htmlspecialchars() supaya aman dari XSS.
         ?>
         <label> Nama :
-            <input type="text" name="nama" value="<?php htmlspecialchars($inputNama);?>">
+            <input type="text" name="nama" value="<?= htmlspecialchars($inputNama);?>">
         </label>
         <label> Harga :
-            <input type="text" name="harga" value="<?php htmlspecialchars($inputHarga);?>">
+            <input type="text" name="harga" value="<?= htmlspecialchars($inputHarga);?>">
         </label>
         <label> Stok :
-            <input type="text" name="stok" value="<?php htmlspecialchars($inputStok);?>">
+            <input type="text" name="stok" value="<?= htmlspecialchars($inputStok);?>">
         </label>
         <button type="submit">Simpan</button>
     </form>
