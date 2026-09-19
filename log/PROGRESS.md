@@ -98,6 +98,13 @@ Progres: 6 PASS/6 FAIL -> 12 PASS setelah 2 perbaikan.
 3. Arti `VALUES (?,?,?)`
 4. Arti `: void`, `: array`, dan return type kosong
 
+## MATERI SIAP UNTUK SESI BERIKUTNYA (disiapkan 19 Sep malam)
+Sesi 007 sudah lengkap dan sudah diuji:
+- Materi `sesi/007-update-delete.md` (worked example lengkap versi buku)
+- Kerangka `latihan/11-edit.php` (Tugas 11) dan `latihan/12-hapus.php` (Tugas 12)
+- Pengecekan `cek-11.php` (10 poin) dan `cek-12.php` (9 poin), pakai driver `cek-driver.php`
+- Hasil uji: jawaban benar -> 11: 10 PASS, 12: 9 PASS. Kerangka kosong -> 11: 6 PASS/4 FAIL, 12: 4 PASS/5 FAIL.
+
 ## BERIKUTNYA
 1. **Sesi 007 - Update & Delete**: form HTML + `$_POST` + validasi input + INSERT ke database + redirect setelah simpan (biar refresh tidak double-submit). Di akhir sesi ini Zahab sudah punya aplikasi CRUD yang bisa dipakai
 2. Setelah itu: update + hapus data, lalu validasi lebih ketat, baru masuk Laravel

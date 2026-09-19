@@ -27,6 +27,8 @@ Angka di nama file **bukan** pasangan otomatis. Satu sesi bisa punya beberapa la
 | `sesi/004-database.md` | `latihan/08-db-baca.php` (baca DB dari function) | ✅ LULUS |
 | `sesi/005-halaman-web.md` | `latihan/09-halaman.php` (tabel HTML di browser) | ✅ LULUS (11 PASS) |
 | `sesi/006-form-crud.md` | `latihan/10-form.php` (form tambah produk) | ✅ LULUS (12 PASS) |
+| `sesi/007-update-delete.md` | `latihan/11-edit.php` (ubah produk) | 🔄 MATERI SIAP, belum dikerjakan |
+| `sesi/007-update-delete.md` | `latihan/12-hapus.php` (hapus produk) | 🔄 MATERI SIAP, belum dikerjakan |
 
 ## Alat bantu (bukan tugas)
 | File | Gunanya |
@@ -35,6 +37,9 @@ Angka di nama file **bukan** pasangan otomatis. Satu sesi bisa punya beberapa la
 | `latihan/cek-10.php` | pengecekan otomatis Tugas 10 |
 | `latihan/cek-10-kirim.php` | simulasi kiriman form POST (dipakai oleh cek-10) |
 | `latihan/cek-10-buka.php` | simulasi buka halaman dari browser / request GET |
+| `latihan/cek-driver.php` | simulasi request GET/POST (dipakai cek-11 dan cek-12) |
+| `latihan/cek-11.php` | pengecekan otomatis Tugas 11 (10 poin) |
+| `latihan/cek-12.php` | pengecekan otomatis Tugas 12 (9 poin) |
 | `latihan/lihat-db.php` | lihat isi database toko.sqlite dari terminal |
 | `latihan/expected/*.txt` | output patokan buat dibandingin |
 | `TANYA-JAWAB.md` | catatan pertanyaan Zahab + jawabannya |
@@ -51,6 +56,6 @@ Angka di nama file **bukan** pasangan otomatis. Satu sesi bisa punya beberapa la
 4. **sesi 004** - database: PDO, prepared statement, fetch, keamanan SQL injection
 5. **sesi 005** - halaman web: HTML, PHP di dalam HTML, htmlspecialchars (anti XSS)
 6. **sesi 006** - form & CRUD: `$_POST`, validasi input, INSERT dari form, redirect
-7. **sesi 007 (rencana)** - update & delete data
+7. **sesi 007** - update & delete data: `$_GET`, tombol Edit, form terisi, UPDATE + WHERE, hapus wajib POST (bukan link)
 8. **sesi 008 (rencana)** - CSS biar tampilannya rapi
 9. **setelah itu** - Laravel: route, controller, Eloquent, Blade, migration
