@@ -78,6 +78,26 @@ Cek otomatis `cekj-09.php`: 11 PASS. Validasi HTML pakai parser: struktur valid,
 2. **Test hijau bukan jaminan.** Pengecekan awal (9 poin) tidak menangkap bug `</tr>` karena tidak menguji keseimbangan tag. Setelah ditambah 2 pengecekan (total 11), bug-nya ketangkep. Ini contoh nyata keterbatasan test
 3. `htmlspecialchars()` dipakai benar di percobaan pertama -> kesadaran keamanan XSS sudah ada
 
+## HARI 5 - 19 Sep 2026 (SESI 006 - FORM & CRUD: CREATE + READ)
+### Lulus
+| Tugas | Konsep yang dikuasai |
+|---|---|
+| 10-form.php | form HTML + `method="post"`, `$_POST`, `trim()` + `?? ""`, validasi 3 kolom, INSERT dari form, `header("Location")` + `exit`, tampilkan error, isi ulang form, `htmlspecialchars` di semua output |
+
+Cek otomatis `cek-10.php`: 12 PASS (termasuk tes validasi ditolak + tes anti-XSS).
+Progres: 6 PASS/6 FAIL -> 12 PASS setelah 2 perbaikan.
+
+### Yang dibenerin hari ini
+1. `int($x)` -> `(int)$x` (PHP tidak punya function `int`; cast itu `(int)` atau `intval()`)
+2. `<?php htmlspecialchars($x);?>` -> `<?= htmlspecialchars($x) ?>` (kurang `echo`, jadi atribut value selalu kosong)
+3. `CREATE TABLE` yang tidak perlu di file form (duplikasi skema)
+
+### Pertanyaan Zahab yang dijawab (ada di TANYA-JAWAB.md)
+1. Kenapa `value` harus diisi `$inputNama` dan gimana cara bacanya
+2. `CREATE TABLE IF NOT EXISTS` di file form perlu atau tidak
+3. Arti `VALUES (?,?,?)`
+4. Arti `: void`, `: array`, dan return type kosong
+
 ## BERIKUTNYA
-1. **Sesi 006 - Form tambah produk**: form HTML + `$_POST` + validasi input + INSERT ke database + redirect setelah simpan (biar refresh tidak double-submit). Di akhir sesi ini Zahab sudah punya aplikasi CRUD yang bisa dipakai
+1. **Sesi 007 - Update & Delete**: form HTML + `$_POST` + validasi input + INSERT ke database + redirect setelah simpan (biar refresh tidak double-submit). Di akhir sesi ini Zahab sudah punya aplikasi CRUD yang bisa dipakai
 2. Setelah itu: update + hapus data, lalu validasi lebih ketat, baru masuk Laravel

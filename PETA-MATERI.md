@@ -26,7 +26,7 @@ Angka di nama file **bukan** pasangan otomatis. Satu sesi bisa punya beberapa la
 | `sesi/004-database.md` | `latihan/07-db-setup.php` (bikin tabel + isi data) | ✅ LULUS |
 | `sesi/004-database.md` | `latihan/08-db-baca.php` (baca DB dari function) | ✅ LULUS |
 | `sesi/005-halaman-web.md` | `latihan/09-halaman.php` (tabel HTML di browser) | ✅ LULUS (11 PASS) |
-| `sesi/006-form-crud.md` | `latihan/10-form.php` (form tambah produk) | 🔄 SEDANG DIKERJAKAN |
+| `sesi/006-form-crud.md` | `latihan/10-form.php` (form tambah produk) | ✅ LULUS (12 PASS) |
 
 ## Alat bantu (bukan tugas)
 | File | Gunanya |
@@ -37,6 +37,7 @@ Angka di nama file **bukan** pasangan otomatis. Satu sesi bisa punya beberapa la
 | `latihan/cek-10-buka.php` | simulasi buka halaman dari browser / request GET |
 | `latihan/lihat-db.php` | lihat isi database toko.sqlite dari terminal |
 | `latihan/expected/*.txt` | output patokan buat dibandingin |
+| `TANYA-JAWAB.md` | catatan pertanyaan Zahab + jawabannya |
 | `PANDUAN-GIT.md` | cara pull, commit, push |
 | `PANDUAN-RUN-PHP.md` | cara run, cara bandingin output dengan target |
 | `log/PROGRESS.md` | rekap progres semua hari |
