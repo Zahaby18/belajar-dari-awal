@@ -29,6 +29,8 @@ Angka di nama file **bukan** pasangan otomatis. Satu sesi bisa punya beberapa la
 | `sesi/006-form-crud.md` | `latihan/10-form.php` (form tambah produk) | ✅ LULUS (12 PASS) |
 | `sesi/007-update-delete.md` | `latihan/11-edit.php` (ubah produk) | 🔄 MATERI SIAP, belum dikerjakan |
 | `sesi/007-update-delete.md` | `latihan/12-hapus.php` (hapus produk) | 🔄 MATERI SIAP, belum dikerjakan |
+| `sesi/008-oop-php.md` | `latihan/13-oop.php` (class, object, property, method) | 🗓️ SETELAH sesi 007; latihan belum disiapkan |
+| `sesi/009-css-polish.md` | latihan styling CRUD | 🗓️ RENCANA, opsional sebelum Laravel |
 
 ## Alat bantu (bukan tugas)
 | File | Gunanya |
@@ -57,5 +59,6 @@ Angka di nama file **bukan** pasangan otomatis. Satu sesi bisa punya beberapa la
 5. **sesi 005** - halaman web: HTML, PHP di dalam HTML, htmlspecialchars (anti XSS)
 6. **sesi 006** - form & CRUD: `$_POST`, validasi input, INSERT dari form, redirect
 7. **sesi 007** - update & delete data: `$_GET`, tombol Edit, form terisi, UPDATE + WHERE, hapus wajib POST (bukan link)
-8. **sesi 008 (rencana)** - CSS biar tampilannya rapi
-9. **setelah itu** - Laravel: route, controller, Eloquent, Blade, migration
+8. **sesi 008** - PHP OOP dasar: class, object, property, method, constructor, visibility, composition. Ini prasyarat praktis untuk membaca/menulis Laravel
+9. **sesi 009 (opsional)** - CSS untuk poles tampilan CRUD
+10. **setelah itu** - Laravel: route, controller, Eloquent, Blade, migration

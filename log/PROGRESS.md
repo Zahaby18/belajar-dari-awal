@@ -106,5 +106,7 @@ Sesi 007 sudah lengkap dan sudah diuji:
 - Hasil uji: jawaban benar -> 11: 10 PASS, 12: 9 PASS. Kerangka kosong -> 11: 6 PASS/4 FAIL, 12: 4 PASS/5 FAIL.
 
 ## BERIKUTNYA
-1. **Sesi 007 - Update & Delete**: form HTML + `$_POST` + validasi input + INSERT ke database + redirect setelah simpan (biar refresh tidak double-submit). Di akhir sesi ini Zahab sudah punya aplikasi CRUD yang bisa dipakai
-2. Setelah itu: update + hapus data, lalu validasi lebih ketat, baru masuk Laravel
+1. **Sesi 007 - Update & Delete**: kerjakan `11-edit.php` lalu `12-hapus.php`; materinya sudah siap di `sesi/007-update-delete.md`
+2. **Sesi 008 - PHP OOP dasar**: class, object, property, method, constructor, visibility, composition. Ini akan jadi prasyarat praktis sebelum Laravel
+3. CSS untuk poles tampilan CRUD dibuat opsional, tidak perlu menghambat belajar Laravel
+4. Setelah OOP: mulai Laravel dengan route, controller, Eloquent, Blade, migration.
