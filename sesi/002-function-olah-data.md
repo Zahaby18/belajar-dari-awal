@@ -6,6 +6,9 @@
 > - `latihan/04-produkMahal.php` (Tugas 4)
 > - `latihan/solusi/03-stokRendah-solusi.php` (contoh jawaban Tugas 3)
 
+
+> **PENANDA PENULIS:** materi dan contoh kode di file sesi ini ditulis Blessync. Implementasi latihan Zahab ada di file `latihan/` yang tertaut di atas dan ditandai langsung di kodenya.
+
 Target sesi ini: 2 function selesai, dan kamu PAHAM tiap barisnya.
 Jangan kerjakan file `01-basics.php` secara keseluruhan. Kita potong kecil, satu function satu waktu.
 

@@ -1,4 +1,5 @@
 <?php
+// INI BLESSYNC YANG NGERJAIN: KERANGKA BLESSYNC - Zahab belum mengerjakan latihan ini.
 declare(strict_types=1);
 
 // ============================================================

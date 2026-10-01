@@ -1,4 +1,6 @@
 <?php
+// PENANDA KEPEMILIKAN KODE: blok bertanda INI ZAHAB = bagian yang Zahab implementasi/ubah.
+// Kerangka, instruksi, contoh, dan test yang tidak bertanda disiapkan Blessync.
 // ============================================================
 // SESI TERKAIT : sesi/005-halaman-web.md
 // STATUS       : LULUS (11 PASS di cek-09.php)
@@ -59,6 +61,7 @@ $produk = $db->query("SELECT * FROM produk ORDER BY id")->fetchAll();
         // Ingat: tutup loop pakai endforeach, bukan kurung kurawal.
         // Dan jangan lupa: pembuka dan penutup PHP dipisah, lihat materi kalau ragu.
 
+        // >>> INI ZAHAB YANG NGERJAIN: loop produk dan isi 4 sel tabel
         foreach($produk as $p) : ?>
             <tr>
                 <td><?php echo $p["id"] ?></td>
@@ -67,8 +70,11 @@ $produk = $db->query("SELECT * FROM produk ORDER BY id")->fetchAll();
                 <td><?php echo $p["stok"]; ?></td>
             </tr>
         <?php endforeach; ?>
+        <!-- <<< AKHIR BAGIAN ZAHAB -->
     </table>
 
+    <!-- >>> INI ZAHAB YANG NGERJAIN: hitung jumlah produk -->
     <p>Total produk: <?= count($produk);  ?></p>
+    <!-- <<< AKHIR BAGIAN ZAHAB -->
 </body>
 </html>

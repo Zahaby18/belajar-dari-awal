@@ -3,6 +3,9 @@
 > **LATIHAN TERKAIT:**
 > - `latihan/01-basics.php` (5 function, masih ditunda)
 
+
+> **PENANDA PENULIS:** materi dan contoh kode di file sesi ini ditulis Blessync. Implementasi latihan Zahab ada di file `latihan/` yang tertaut di atas dan ditandai langsung di kodenya.
+
 Estimasi: 2 jam. Target: setelah sesi ini kamu BISA NULIS PHP tanpa AI.
 
 ## Sebelum mulai: file apa ini

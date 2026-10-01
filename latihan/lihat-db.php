@@ -1,4 +1,5 @@
 <?php
+// INI BLESSYNC YANG NGERJAIN: ALAT BANTU BLESSYNC - bukan tugas implementasi Zahab.
 declare(strict_types=1);
 
 // ============================================================

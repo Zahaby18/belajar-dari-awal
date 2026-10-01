@@ -4,6 +4,9 @@
 > - `latihan/05-cariProduk.php` (Tugas 5)
 > - `latihan/06-tampilkanTabel.php` (Tugas 6)
 
+
+> **PENANDA PENULIS:** materi dan contoh kode di file sesi ini ditulis Blessync. Implementasi latihan Zahab ada di file `latihan/` yang tertaut di atas dan ditandai langsung di kodenya.
+
 Kamu sudah lulus: saring data (filter). Sesi ini 2 pola baru, dua-duanya kamu pakai terus sampai kerja.
 
 ---

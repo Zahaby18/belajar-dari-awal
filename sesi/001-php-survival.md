@@ -4,6 +4,9 @@
 > - `latihan/00-mulai.php` (Tugas 1-6 kecil)
 > - `latihan/01-basics.php` (versi berat, DITUNDA - materinya di sesi/001-php-dasar.md)
 
+
+> **PENANDA PENULIS:** materi dan contoh kode di file sesi ini ditulis Blessync. Implementasi latihan Zahab ada di file `latihan/` yang tertaut di atas dan ditandai langsung di kodenya.
+
 Ganti target: bikin kamu bisa NULIS PHP dari nol, mulai dari 1 baris.
 Estimasi: 45 menit total, 6 tugas kecil. Tugas 1 udah dikasih jawabannya biar kamu lihat polanya.
 

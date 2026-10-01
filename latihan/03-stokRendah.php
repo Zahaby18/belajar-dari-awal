@@ -1,10 +1,13 @@
 <?php
+// PENANDA KEPEMILIKAN KODE: blok bertanda INI ZAHAB = bagian yang Zahab implementasi/ubah.
+// Kerangka, instruksi, contoh, dan test yang tidak bertanda disiapkan Blessync.
 // ============================================================
 // SESI TERKAIT : sesi/002-function-olah-data.md
 // STATUS       : LULUS
 // Buka file sesi itu buat baca materinya, dan cek PETA-MATERI.md
 // kalau bingung nyocokin sesi sama latihan.
 // ============================================================
+// >>> INI ZAHAB YANG NGERJAIN: implementasi Tugas 3 (filter produk stok rendah)
 function stokRendah(array $produk, int $batas): array
 {
     $hasil = [];
@@ -16,6 +19,7 @@ function stokRendah(array $produk, int $batas): array
 
     return $hasil;
 }
+// <<< AKHIR BAGIAN ZAHAB
 
 $produk = [
     ["nama" => "Kopi Arabica",  "harga" => 85000, "stok" => 12],

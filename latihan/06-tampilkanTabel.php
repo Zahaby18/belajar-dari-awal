@@ -1,4 +1,6 @@
 <?php
+// PENANDA KEPEMILIKAN KODE: blok bertanda INI ZAHAB = bagian yang Zahab implementasi/ubah.
+// Kerangka, instruksi, contoh, dan test yang tidak bertanda disiapkan Blessync.
 // ============================================================
 // SESI TERKAIT : sesi/003-cari-dan-tampilkan.md
 // STATUS       : LULUS
@@ -16,6 +18,7 @@
 // baris 1: header  (Nama | Harga | Stok)
 // baris 2: garis pemisah dari tanda - sebanyak 34
 // baris 3+: satu baris per produk
+// >>> INI ZAHAB YANG NGERJAIN: implementasi Tugas 6
 function tampilkanTabel(array $produk): void
 {
     echo str_pad("Nama", 15). "| " . str_pad("Harga", 10) . "| ". "Stok" . "\n";
@@ -25,6 +28,7 @@ function tampilkanTabel(array $produk): void
         echo str_pad($p["nama"], 15) . "| " . str_pad((string)$p["harga"], 10) . "| " . $p["stok"] . "\n" ;
     }
 }
+// <<< AKHIR BAGIAN ZAHAB
 
 // ============================================================
 // BAGIAN TES - jangan diubah

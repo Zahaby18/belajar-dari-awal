@@ -1,4 +1,6 @@
 <?php
+// PENANDA KEPEMILIKAN KODE: blok bertanda INI ZAHAB = bagian yang Zahab implementasi/ubah.
+// Kerangka, instruksi, contoh, dan test yang tidak bertanda disiapkan Blessync.
 // ============================================================
 // SESI TERKAIT : sesi/003-cari-dan-tampilkan.md
 // STATUS       : LULUS
@@ -15,6 +17,7 @@
 // Cari 1 produk berdasarkan namanya.
 // Ketemu -> serahkan produknya (berhenti begitu ketemu)
 // Nggak ketemu -> serahkan null
+// >>> INI ZAHAB YANG NGERJAIN: implementasi Tugas 5
 function cariProduk(array $produk, string $nama): ?array
 {
     foreach($produk as $p){
@@ -25,6 +28,7 @@ function cariProduk(array $produk, string $nama): ?array
 
     return null;
 }
+// <<< AKHIR BAGIAN ZAHAB
 
 // ============================================================
 // BAGIAN TES - jangan diubah

@@ -1,4 +1,6 @@
 <?php
+// PENANDA KEPEMILIKAN KODE: blok bertanda INI ZAHAB = bagian yang Zahab implementasi/ubah.
+// Kerangka, instruksi, contoh, dan test yang tidak bertanda disiapkan Blessync.
 // ============================================================
 // SESI TERKAIT : sesi/002-function-olah-data.md
 // STATUS       : LULUS
@@ -13,6 +15,7 @@
 
 // Function ini tugasnya: saring produk yang harganya LEBIH DARI ATAU SAMA DENGAN hargaMinimal.
 // Contoh: produkMahal($produk, 60000) -> produk yang harganya >= 60000
+// >>> INI ZAHAB YANG NGERJAIN: variasi mandiri Tugas 4
 function produkMahal(array $produk, int $hargaMinimal): array
 {
     $hasil = [];
@@ -24,6 +27,7 @@ function produkMahal(array $produk, int $hargaMinimal): array
 
     return $hasil;
 }
+// <<< AKHIR BAGIAN ZAHAB
 
 // ============================================================
 // BAGIAN TES - jangan diubah

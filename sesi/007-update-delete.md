@@ -6,6 +6,9 @@
 > - `latihan/cek-driver.php` (alat simulasi request, dipakai pengecekan)
 > - `latihan/cek-11.php` dan `latihan/cek-12.php` (pengecekan otomatis)
 
+
+> **PENANDA PENULIS:** materi dan contoh kode di file sesi ini ditulis Blessync. Implementasi latihan Zahab ada di file `latihan/` yang tertaut di atas dan ditandai langsung di kodenya.
+
 Kalau sesi 006 selesai, kamu sudah punya Create + Read. Sekarang Update + Delete. Setelah ini CRUD kamu lengkap, dan itu pondasi semua aplikasi bisnis.
 
 ---

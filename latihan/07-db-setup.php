@@ -1,4 +1,6 @@
 <?php
+// PENANDA KEPEMILIKAN KODE: blok bertanda INI ZAHAB = bagian yang Zahab implementasi/ubah.
+// Kerangka, instruksi, contoh, dan test yang tidak bertanda disiapkan Blessync.
 // ============================================================
 // SESI TERKAIT : sesi/004-database.md
 // STATUS       : LULUS
@@ -29,6 +31,7 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //   nama   TEXT
 //   harga  INTEGER
 //   stok   INTEGER
+// >>> INI ZAHAB YANG NGERJAIN: implementasi TODO 1 (CREATE TABLE)
 $db->exec("CREATE TABLE IF NOT EXISTS 
     produk (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -36,6 +39,7 @@ $db->exec("CREATE TABLE IF NOT EXISTS
         harga INTEGER NOT NULL,
         stok INTEGER NOT NULL
 )");
+// <<< AKHIR BAGIAN ZAHAB
 
 
 // TODO 2: isi 4 produk pakai prepared statement
@@ -46,11 +50,13 @@ $db->exec("CREATE TABLE IF NOT EXISTS
 // Petunjuk: bikin $stmt = $db->prepare(...) SEKALI, lalu panggil ->execute([...]) berkali-kali
 // (boleh juga pakai array produk + foreach)
 
+// >>> INI ZAHAB YANG NGERJAIN: implementasi TODO 2 (INSERT 4 produk)
 $stmt = $db->prepare("INSERT INTO produk (nama, harga, stok) VALUES (?, ?, ?)");
 $stmt->execute(["Kopi Arabica", 85000, 12]);
 $stmt->execute(["Teh Hijau", 35000, 3]);
 $stmt->execute(["Cokelat Bubuk", 62000, 0]);
 $stmt->execute(["Gula Aren", 25000, 20]);
+// <<< AKHIR BAGIAN ZAHAB
 
 // ============================================================
 // BAGIAN TES - jangan diubah

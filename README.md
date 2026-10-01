@@ -26,7 +26,10 @@ Kalau belum bisa jalanin PHP di komputermu: edit filenya, bilang "udah" di chat,
 ---
 
 ## Bingung nyocokin sesi sama latihan?
-Buka **`PETA-MATERI.md`**. Di situ ada tabel: sesi mana -> latihan mana -> statusnya apa.
+Buka **`PETA-MATERI.md`**.
+
+## Bingung kode mana yang kamu kerjakan?
+Buka **`PENANDA-KODE.md`**. Di file PHP, cari `INI ZAHAB YANG NGERJAIN` buat kode yang kamu implementasikan, atau `INI BLESSYNC YANG NGERJAIN` buat contoh/kerangka. Setiap blok punya batas awal/akhir supaya jelas.
 Setiap file juga punya petunjuknya sendiri:
 - Di file `sesi/`: ada blok **LATIHAN TERKAIT** di bawah judul
 - Di file `latihan/`: ada komentar **SESI TERKAIT** + status di 6 baris pertama

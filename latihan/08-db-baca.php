@@ -1,4 +1,6 @@
 <?php
+// PENANDA KEPEMILIKAN KODE: blok bertanda INI ZAHAB = bagian yang Zahab implementasi/ubah.
+// Kerangka, instruksi, contoh, dan test yang tidak bertanda disiapkan Blessync.
 // ============================================================
 // SESI TERKAIT : sesi/004-database.md
 // STATUS       : LULUS
@@ -17,15 +19,18 @@ declare(strict_types=1);
 
 // Ambil SEMUA produk dari tabel, urut berdasarkan id.
 // Balikin rak berisi rak (sama bentuknya dengan $produk yang biasa kamu pakai).
+// >>> INI ZAHAB YANG NGERJAIN: implementasi TODO 1
 function ambilSemuaProduk(PDO $db): array
 {
     // TODO 1: SELECT * FROM produk ORDER BY id, lalu fetchAll()
     return $db->query("SELECT * FROM produk ORDER BY id")->fetchAll();
 }
+// <<< AKHIR BAGIAN ZAHAB
 
 // Cari 1 produk berdasarkan id.
 // Ketemu -> balikin barisnya. Nggak ketemu -> balikin null.
 // Petunjuk: di SQL, kalau pakai LIMIT 1, hasilnya paling banyak 1 baris -> pakai fetch(), bukan fetchAll()
+// >>> INI ZAHAB YANG NGERJAIN: implementasi TODO 2-3
 function cariProdukById(PDO $db, int $id): ?array
 {
     // TODO 2: bikin SELECT ... WHERE id = ? pakai prepared statement
@@ -35,6 +40,7 @@ function cariProdukById(PDO $db, int $id): ?array
     $row = $stmt->fetch();
     return $row === false ? null : $row;
 }
+// <<< AKHIR BAGIAN ZAHAB
 
 // ============================================================
 // BAGIAN TES - jangan diubah

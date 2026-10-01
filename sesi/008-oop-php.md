@@ -3,6 +3,9 @@
 > **LATIHAN TERKAIT:** `latihan/13-oop.php` (akan disiapkan setelah Sesi 007)
 > **Prasyarat:** Sesi 001-007, terutama function, array, return type, PDO
 
+
+> **PENANDA PENULIS:** materi dan contoh kode di file sesi ini ditulis Blessync. Implementasi latihan Zahab ada di file `latihan/` yang tertaut di atas dan ditandai langsung di kodenya.
+
 ## Kenapa kita belajar OOP?
 **Perlu, karena Laravel ditulis dengan OOP.** Model, controller, request, service, middleware, dan dependency injection semuanya memakai class dan object.
 

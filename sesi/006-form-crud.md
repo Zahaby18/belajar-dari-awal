@@ -4,6 +4,9 @@
 > - `latihan/10-form.php` (Tugas 10)
 > - `latihan/cek-10.php` + `latihan/cek-10-kirim.php` (alat pengecekan)
 
+
+> **PENANDA PENULIS:** materi dan contoh kode di file sesi ini ditulis Blessync. Implementasi latihan Zahab ada di file `latihan/` yang tertaut di atas dan ditandai langsung di kodenya.
+
 Sampai sekarang data cuma bisa masuk lewat script yang kamu tulis. Sesi ini kamu bikin **user yang nambah data sendiri lewat form di browser**. Inilah CRUD:
 - **C**reate (sesi ini)
 - **R**ead (sesi ini)

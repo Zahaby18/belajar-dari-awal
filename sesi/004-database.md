@@ -4,6 +4,9 @@
 > - `latihan/07-db-setup.php` (Tugas 07)
 > - `latihan/08-db-baca.php` (Tugas 08)
 
+
+> **PENANDA PENULIS:** materi dan contoh kode di file sesi ini ditulis Blessync. Implementasi latihan Zahab ada di file `latihan/` yang tertaut di atas dan ditandai langsung di kodenya.
+
 Ini sesi paling penting sejauh ini. Sampai sekarang data kamu cuma hidup selama program jalan. Setelah ini, data bisa disimpan permanen. Dan inilah dasar dari semua aplikasi web, termasuk Laravel.
 
 ---

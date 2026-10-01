@@ -1,4 +1,5 @@
 <?php
+// INI BLESSYNC YANG NGERJAIN: ALAT PENGECEKAN BLESSYNC - bukan tugas implementasi Zahab.
 // ============================================================
 // SESI TERKAIT : sesi/005-halaman-web.md
 // STATUS       : ALAT PENGECEKAN, bukan tugas

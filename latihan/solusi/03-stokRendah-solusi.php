@@ -1,4 +1,5 @@
 <?php
+// INI BLESSYNC YANG NGERJAIN: CONTOH JAWABAN BLESSYNC - bandingkan dengan implementasi Zahab di ../03-stokRendah.php.
 // ============================================================
 // SESI TERKAIT : sesi/002-function-olah-data.md
 // STATUS       : CONTOH JAWABAN

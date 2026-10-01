@@ -4,6 +4,9 @@
 > - `latihan/09-halaman.php` (Tugas 09)
 > - `latihan/cek-09.php` (alat pengecekan otomatis)
 
+
+> **PENANDA PENULIS:** materi dan contoh kode di file sesi ini ditulis Blessync. Implementasi latihan Zahab ada di file `latihan/` yang tertaut di atas dan ditandai langsung di kodenya.
+
 Sampai sekarang semua hasil kerjamu cuma berupa teks di terminal. Sesi ini kamu bikin **halaman web** yang bisa dibuka di browser.
 
 ---

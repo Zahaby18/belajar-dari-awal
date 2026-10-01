@@ -45,6 +45,7 @@ Angka di nama file **bukan** pasangan otomatis. Satu sesi bisa punya beberapa la
 | `latihan/lihat-db.php` | lihat isi database toko.sqlite dari terminal |
 | `latihan/expected/*.txt` | output patokan buat dibandingin |
 | `TANYA-JAWAB.md` | catatan pertanyaan Zahab + jawabannya |
+| `PENANDA-KODE.md` | peta kepemilikan kode: bagian Zahab vs Blessync |
 | `PANDUAN-GIT.md` | cara pull, commit, push |
 | `PANDUAN-RUN-PHP.md` | cara run, cara bandingin output dengan target |
 | `log/PROGRESS.md` | rekap progres semua hari |
